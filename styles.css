@@ -23,6 +23,11 @@
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
+
+  --scrollbar-thumb: var(--cyan);
+  --scrollbar-track: var(--bg-card);
+  color-scheme: dark;
+  accent-color: var(--cyan);
 }
 
 *,
@@ -40,6 +45,35 @@ html {
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: clip;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Fallback de barra de rolagem para navegadores WebKit legados */
+@supports not (scrollbar-color: auto) {
+  html::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 999px;
+    border: 2px solid var(--scrollbar-track);
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background: var(--magenta);
+  }
+}
+
+::selection {
+  background: var(--magenta);
+  color: var(--text-white);
 }
 
 body {
@@ -146,6 +180,23 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+/* Official SVG Logo (assets/FS_LOGO.svg) */
+.fs-logo-img {
+  width: 34px;
+  height: auto;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.brand-logo:hover .fs-logo-img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(0, 175, 239, 0.35));
+}
+
+.fs-logo-sm {
+  width: 28px;
 }
 
 /* Exact Recreation of Fábio Suniga's Geometric F Logo */
@@ -1940,6 +1991,40 @@ a {
 .footer-brand p {
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 40px;
+  min-block-size: 40px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-linkedin:hover {
+  color: var(--text-white);
+  background: #0a66c2;
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--cyan-glow);
+}
+
+.footer-linkedin:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 .footer-cmyk-tag {

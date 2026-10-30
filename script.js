@@ -1,5 +1,5 @@
 // Configuração rápida do perfil do Instagram e WhatsApp
-const INSTAGRAM_URL = "https://www.instagram.com/";
+const INSTAGRAM_URL = "https://www.instagram.com/fabiosunigadesign/";
 const WHATSAPP_NUMBER = "5511953273656";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -94,15 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 4. Configurador de Orçamento Rápido + Links de WhatsApp e Instagram
+  // 4. Configurador de Orçamento Rápido + Link de WhatsApp
   const serviceChips = document.querySelectorAll(".selector-chip");
   const clientNameInput = document.getElementById("clientName");
   const generatedMessageEl = document.getElementById("generatedMessage");
   const sendWhatsappBtn = document.getElementById("sendWhatsappBtn");
   const whatsappFloat = document.getElementById("whatsappFloat");
-  const copyAndOpenBtn = document.getElementById("copyAndOpenInstaBtn");
-  const copyBtnText = document.getElementById("copyBtnText");
-  const copyFeedback = document.getElementById("copyFeedback");
 
   let selectedService = "Landing Page Exclusiva";
 
@@ -151,32 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (clientNameInput) {
     clientNameInput.addEventListener("input", updateMessage);
-  }
-
-  if (copyAndOpenBtn) {
-    copyAndOpenBtn.addEventListener("click", async () => {
-      const finalMsg = updateMessage();
-      try {
-        await navigator.clipboard.writeText(finalMsg);
-        if (copyBtnText) {
-          copyBtnText.textContent = "✓ Mensagem Copiada! Abrindo Instagram...";
-        }
-        if (copyFeedback) {
-          copyFeedback.textContent =
-            "Mensagem copiada para a área de transferência! Basta colar na DM do Instagram.";
-          copyFeedback.style.color = "#00a8ef";
-        }
-      } catch {
-        // Fallback caso o navegador bloqueie clipboard em file://
-      }
-
-      setTimeout(() => {
-        window.open(INSTAGRAM_URL, "_blank", "noopener,noreferrer");
-        if (copyBtnText) {
-          copyBtnText.textContent = "Copiar Mensagem & Ir para o Instagram";
-        }
-      }, 900);
-    });
   }
 });
 
