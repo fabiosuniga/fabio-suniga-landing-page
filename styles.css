@@ -39,12 +39,14 @@ html {
   color: var(--text-white);
   font-family: var(--font-sans);
   line-height: 1.6;
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--bg-black);
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
+  width: 100%;
 }
 
 img {
@@ -252,11 +254,17 @@ a {
   background-clip: border-box;
   background-repeat: no-repeat;
   text-align: center;
+  line-height: 1.25;
+}
+
+.btn svg {
+  flex-shrink: 0;
 }
 
 .btn-sm {
   padding: 10px 20px;
   font-size: 0.88rem;
+  white-space: nowrap;
 }
 
 .btn-lg {
@@ -266,8 +274,9 @@ a {
 
 .btn-full {
   width: 100%;
-  padding: 16px 24px;
-  font-size: 1rem;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  border-radius: 14px;
 }
 
 .btn-primary {
@@ -405,7 +414,9 @@ a {
 .text-gradient-cmy {
   background: linear-gradient(90deg, var(--cyan) 0%, var(--magenta) 55%, var(--yellow) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .highlight-box-yellow {
@@ -431,53 +442,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 44px;
-}
-
-.hero-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.metric-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.metric-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
-  margin-top: 3px;
-}
-
-.tag-cyan { background: var(--cyan); color: #000; }
-.tag-magenta { background: var(--magenta); color: #fff; }
-.tag-yellow { background: var(--yellow); color: #000; }
-
-.metric-item p {
-  font-size: 0.84rem;
-  color: var(--text-muted);
-  line-height: 1.35;
-}
-
-.metric-item strong {
-  display: block;
-  color: var(--text-white);
-  font-size: 0.9rem;
-}
-
-.metric-divider {
-  width: 1px;
-  height: 32px;
-  background: var(--border-subtle);
 }
 
 /* ==========================================
@@ -2013,15 +1977,183 @@ a {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header limpo no celular sem botão espremido */
+  .nav-container {
+    height: 68px;
+    gap: 12px;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  /* Evita marcas de corte saindo para fora da tela no celular */
+  .crop-mark {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .eyebrow-badge {
+    font-size: 0.68rem;
+    padding: 6px 12px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .metric-divider {
+    display: none;
+  }
+
+  /* Artboard Hero adaptado para caber na largura do celular */
+  .artboard-frame {
+    padding: 16px 14px;
+  }
+
+  .artboard-filename {
+    font-size: 0.66rem;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hero-brand-stage {
+    padding: 16px 8px;
+  }
+
+  .fs-stage-row {
+    grid-template-columns: 88px 1fr;
+    gap: 10px;
+  }
+
+  .big-fs-cyan,
+  .big-fs-magenta,
+  .big-fs-yellow {
+    height: 38px;
+  }
+
+  .callout-box {
+    min-width: 0;
+    width: 100%;
+    padding: 8px 10px;
+  }
+
+  .callout-box strong {
+    font-size: 0.76rem;
+  }
+
+  .callout-box small {
+    font-size: 0.68rem;
+  }
+
+  .artboard-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Vitrine e Mockup de Navegador no Celular */
+  .showcase-tab {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    padding: 10px 14px;
+  }
+
+  .browser-bar {
+    padding: 10px 14px;
+  }
+
+  .browser-badge {
+    display: none;
+  }
+
+  .browser-url {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 210px;
+  }
+
+  .demo-page {
+    padding: 18px 16px 24px;
+    gap: 20px;
+  }
+
+  .demo-nav-links {
+    display: none;
+  }
+
+  .demo-hero-copy h3,
+  .burger-giant-title {
+    font-size: 1.28rem !important;
+  }
+
+  .demo-actions .demo-primary-btn,
+  .demo-actions .demo-secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Pôster Design Gráfico e Serviços no Celular */
+  .design-grafico-poster {
+    padding: 20px;
+  }
+
+  .service-row {
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+  }
+
   .insta-carousel-grid {
     grid-template-columns: 1fr;
   }
-  .hero-cta-group .btn {
-    width: 100%;
+
+  /* Orçamento e Botões Finais no Celular */
+  .contact-box {
+    padding: 24px 16px;
   }
-  .demo-page {
-    padding: 20px;
+
+  .briefing-builder {
+    padding: 18px 14px;
+  }
+
+  .btn-full {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    border-radius: 12px;
+  }
+
+  /* Botão Flutuante do WhatsApp no Celular */
+  .whatsapp-float {
+    width: 54px;
+    height: 54px;
+    right: 18px;
+    bottom: 20px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
