@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const mockupUrl = document.getElementById("mockupUrl");
 
   const urlMap = {
-    clinica: "https://auraclinica.com.br (Demonstração Fictícia)",
-    escritorio: "https://verticearquitetura.com.br (Demonstração Fictícia)",
-    comercio: "https://brasaemalte.com.br (Demonstração Fictícia)",
+    petcare: "https://petcareclinica.com.br (Demonstração Fictícia)",
+    imobiliaria: "https://primeimoveis.com.br (Demonstração Fictícia)",
+    hamburgueria: "https://betterbeefburger.com.br (Demonstração Fictícia)",
   };
 
   showcaseTabs.forEach((tab) => {

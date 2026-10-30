@@ -872,9 +872,19 @@ a {
   border-radius: 50%;
 }
 
-.dot-light {
-  background: #ffffff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+.dot-pet {
+  background: #f39bb2;
+  box-shadow: 0 0 0 2px #0e4d4f;
+}
+
+.dot-imob {
+  background: #ddb867;
+  box-shadow: 0 0 0 2px #152238;
+}
+
+.dot-burger {
+  background: #f5a600;
+  box-shadow: 0 0 0 2px #b80000;
 }
 
 .browser-mockup {
@@ -934,29 +944,439 @@ a {
 /* Realistic Miniature Demo Landing Pages inside Browser Mockup */
 .demo-page {
   padding: 28px 36px 40px;
-  min-height: 390px;
+  min-height: 410px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 28px;
 }
 
-/* EXEMPLO 1: CLÍNICA (FUNDO BRANCO / CLEAN) */
-.demo-clinica-light {
-  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-  color: #0f172a;
+/* Swatch pill showing the client's brand palette applied */
+.demo-palette-applied {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.06);
 }
 
-/* EXEMPLO 2: ESCRITÓRIO / SERVIÇOS (ELEGANTE ESCURO) */
-.demo-escritorio-dark {
-  background: radial-gradient(circle at 85% 15%, rgba(0, 168, 239, 0.16), transparent 55%), #0b0f17;
-  color: #f8fafc;
+.demo-palette-applied i {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
 }
 
-/* EXEMPLO 3: COMÉRCIO / GASTRONOMIA (VIBRANTE) */
-.demo-comercio-vibrant {
-  background: radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.18), transparent 55%), #140f0b;
+/* =========================================================
+   EXEMPLO 01: PET CARE (Branco #FFFFFF, Rosa #F39BB2, Verde Petróleo #0E4D4F)
+   ========================================================= */
+.demo-petcare {
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f8 70%, #fde8ef 100%);
+  color: #0e4d4f;
+}
+
+.pet-navbar {
+  border-bottom: 2px solid rgba(243, 155, 178, 0.35);
+}
+
+.pet-brand-title {
+  color: #0e4d4f;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+}
+
+.pet-brand-sub {
+  color: #d97593;
+  font-weight: 600;
+}
+
+.pet-links {
+  color: #0e4d4f;
+}
+
+.pet-cta-pink {
+  background: #f39bb2;
+  color: #0e4d4f;
+  font-weight: 800;
+}
+
+.pet-tag {
+  background: #fde8ef;
+  color: #c85a7c;
+  border: 1px solid #f39bb2;
+}
+
+.pet-copy h3 {
+  color: #0e4d4f;
+}
+
+.pet-copy p {
+  color: #335c5e;
+}
+
+.pet-btn-teal {
+  background: #0e4d4f;
   color: #ffffff;
+  box-shadow: 0 8px 20px rgba(14, 77, 79, 0.22);
+}
+
+.pet-btn-outline {
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: 2px solid #f39bb2;
+  color: #0e4d4f;
+  font-weight: 700;
+  font-size: 0.84rem;
+}
+
+.pet-card {
+  background: #0e4d4f;
+  color: #ffffff;
+  border: 3px solid #f39bb2;
+  border-radius: 22px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(14, 77, 79, 0.22);
+}
+
+.pet-card-badge {
+  display: inline-block;
+  background: #f39bb2;
+  color: #0e4d4f;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.pet-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.pet-card-desc {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.84);
+  margin-bottom: 14px;
+}
+
+.pet-list li span {
+  color: #f39bb2 !important;
+}
+
+.pet-footer {
+  border-top-color: rgba(243, 155, 178, 0.3);
+}
+
+.pet-footer strong {
+  color: #f39bb2;
+}
+
+/* =========================================================
+   EXEMPLO 02: IMOBILIÁRIA (Azul Marinho #152238 + Dourado #DDB867 + Branco)
+   ========================================================= */
+.demo-imobiliaria {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(221, 184, 103, 0.16), transparent 50%),
+    linear-gradient(160deg, #152238 0%, #0e1726 100%);
+  color: #ffffff;
+}
+
+.imob-navbar {
+  border-bottom: 1px solid rgba(221, 184, 103, 0.28);
+}
+
+.imob-brand-title {
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.imob-brand-sub {
+  color: #ddb867;
+}
+
+.imob-palette {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+
+.imob-cta-gold {
+  background: #ddb867;
+  color: #152238;
+  font-weight: 800;
+}
+
+.imob-tag {
+  background: rgba(221, 184, 103, 0.14);
+  color: #ddb867;
+  border: 1px solid rgba(221, 184, 103, 0.45);
+}
+
+.imob-btn-gold {
+  background: #ddb867;
+  color: #152238;
+  border-radius: 999px;
+}
+
+.imob-btn-white {
+  background: #ffffff;
+  color: #152238;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.imob-card {
+  background: linear-gradient(155deg, #ffffff 0%, #f8fafc 72%, #f3e4be 100%);
+  color: #152238;
+  border-top: 5px solid #ddb867;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.imob-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.imob-pill {
+  background: #152238;
+  color: #ddb867;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.imob-code {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.imob-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #152238;
+  margin-bottom: 8px;
+}
+
+.imob-specs {
+  font-size: 0.86rem;
+  color: #334155;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.imob-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #ddb867, transparent);
+  margin-bottom: 12px;
+}
+
+.imob-footer strong {
+  color: #152238;
+}
+
+/* =========================================================
+   EXEMPLO 03: HAMBURGUERIA (Vermelho #B80000 + Amarelo #F5A600 + Preto #0F0F0F)
+   ========================================================= */
+.demo-hamburgueria {
+  background:
+    radial-gradient(circle at 80% 30%, #d90404 0%, #9e0000 65%, #6e0000 100%);
+  color: #ffffff;
+  border: 4px solid #f5a600;
+}
+
+.burger-navbar {
+  border-bottom: 2px solid rgba(245, 166, 0, 0.45);
+}
+
+.burger-logo-badge {
+  background: #f5a600;
+  color: #0f0f0f;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 2px solid #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  transform: rotate(-3deg);
+}
+
+.burger-logo-badge span {
+  font-size: 0.6rem;
+  font-weight: 900;
+  background: #0f0f0f;
+  color: #f5a600;
+  padding: 1px 4px;
+  margin-bottom: 2px;
+}
+
+.burger-logo-badge strong {
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.burger-brand-title {
+  color: #f5a600;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+.burger-brand-sub {
+  color: #ffe49e;
+}
+
+.burger-palette {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
+.burger-cta-yellow {
+  background: #f5a600;
+  color: #0f0f0f;
+  font-weight: 900;
+  border: 2px solid #0f0f0f;
+}
+
+.burger-stamps {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stamp-yellow {
+  background: #f5a600;
+  color: #0f0f0f;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border: 2px solid #0f0f0f;
+  transform: rotate(-2deg);
+}
+
+.stamp-black {
+  background: #0f0f0f;
+  color: #f5a600;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 4px 10px;
+}
+
+.burger-giant-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem !important;
+  font-weight: 900;
+  color: #f5a600;
+  text-transform: uppercase;
+  line-height: 1.08 !important;
+  text-shadow: 2px 2px 0 #0f0f0f;
+}
+
+.burger-btn-yellow {
+  background: #f5a600;
+  color: #0f0f0f;
+  border: 2px solid #0f0f0f;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 #0f0f0f;
+}
+
+.burger-btn-black {
+  background: #0f0f0f;
+  color: #f5a600;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+.burger-poster-card {
+  background: #8a0000;
+  border: 3px solid #f5a600;
+  box-shadow: 6px 6px 0 #0f0f0f;
+  padding: 22px;
+  text-align: center;
+}
+
+.burger-poster-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.burger-Small-stamp {
+  background: #0f0f0f;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+}
+
+.burger-discount-badge {
+  background: #f5a600;
+  color: #0f0f0f;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 3px 8px;
+}
+
+.burger-poster-headline {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #f5a600;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.burger-poster-sub {
+  font-size: 0.82rem;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.burger-price-box {
+  background: #f5a600;
+  color: #0f0f0f;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #0f0f0f;
+  margin-bottom: 10px;
+}
+
+.burger-price-box small {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.burger-price-box strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.burger-order-strip {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffe49e;
+  letter-spacing: 0.04em;
 }
 
 /* Mini Navbar inside Demo Page */
@@ -965,7 +1385,6 @@ a {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -976,33 +1395,15 @@ a {
   gap: 12px;
 }
 
-.demo-logo-circle {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.05rem;
-}
-
-.clinica-accent { background: #0d9488; color: #ffffff; }
-.escritorio-accent { background: #00a8ef; color: #050507; }
-.comercio-accent { background: #f59e0b; color: #000000; }
-
 .demo-brand strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.98rem;
   line-height: 1.15;
 }
 
 .demo-brand small {
   display: block;
   font-size: 0.75rem;
-  opacity: 0.72;
 }
 
 .demo-nav-links {
@@ -1016,13 +1417,8 @@ a {
 .demo-nav-cta {
   padding: 7px 14px;
   border-radius: 999px;
-  font-weight: 700;
   font-size: 0.78rem;
 }
-
-.clinica-btn { background: #0d9488; color: #ffffff; }
-.escritorio-btn { background: #00a8ef; color: #050507; }
-.comercio-btn { background: #f59e0b; color: #000000; }
 
 .demo-hero-grid {
   display: grid;
@@ -1041,20 +1437,15 @@ a {
   margin-bottom: 12px;
 }
 
-.clinica-tag { background: #ccfbf1; color: #0f766e; }
-.escritorio-tag { background: rgba(0, 168, 239, 0.16); color: #38bdf8; }
-.comercio-tag { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-
 .demo-hero-copy h3 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   line-height: 1.22;
   margin-bottom: 12px;
 }
 
 .demo-hero-copy p {
   font-size: 0.94rem;
-  opacity: 0.82;
   margin-bottom: 22px;
 }
 
@@ -1072,85 +1463,23 @@ a {
   font-size: 0.88rem;
 }
 
-.demo-secondary-info {
-  font-size: 0.82rem;
-  font-weight: 600;
-  opacity: 0.78;
-}
-
 .demo-side-card {
   border-radius: var(--radius-md);
-  padding: 22px;
-}
-
-.clinica-card {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  color: #0f172a;
-}
-
-.escritorio-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.comercio-card {
-  background: rgba(245, 158, 11, 0.07);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.demo-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 12px;
-  margin-bottom: 14px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-  font-size: 0.85rem;
-}
-
-.demo-rating {
-  color: #0d9488;
-  font-weight: 700;
-  font-size: 0.8rem;
-}
-
-.demo-price-tag {
-  background: #f59e0b;
-  color: #000;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 0.82rem;
 }
 
 .demo-feature-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
   margin-bottom: 16px;
-  font-size: 0.86rem;
+  font-size: 0.85rem;
 }
 
 .demo-feature-list li {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.demo-feature-list li span {
-  font-weight: 800;
-  color: #0d9488;
-}
-
-.escritorio-card .demo-feature-list li span {
-  color: var(--cyan);
-}
-
-.comercio-card .demo-feature-list li span {
-  color: #f59e0b;
 }
 
 .demo-card-footer {
@@ -1163,7 +1492,7 @@ a {
 
 .demo-card-footer small {
   font-size: 0.74rem;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .demo-card-footer strong {

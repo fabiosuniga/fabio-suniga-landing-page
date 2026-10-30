@@ -313,17 +313,17 @@
 
         <!-- Interactive Style Switcher -->
         <div class="showcase-tabs" role="tablist" aria-label="Exemplos fictícios de Landing Pages por segmento">
-          <button class="showcase-tab active" role="tab" aria-selected="true" data-preview="clinica">
-            <span class="tab-dot dot-light"></span>
-            Exemplo 01: Clínica &amp; Saúde (Fundo Claro)
+          <button class="showcase-tab active" role="tab" aria-selected="true" data-preview="petcare">
+            <span class="tab-dot dot-pet"></span>
+            Exemplo 01: Pet Care (Branco, Rosa &amp; Verde)
           </button>
-          <button class="showcase-tab" role="tab" aria-selected="false" data-preview="escritorio">
-            <span class="tab-dot dot-c"></span>
-            Exemplo 02: Escritório &amp; Serviços (Elegante)
+          <button class="showcase-tab" role="tab" aria-selected="false" data-preview="imobiliaria">
+            <span class="tab-dot dot-imob"></span>
+            Exemplo 02: Imobiliária (Azul Marinho &amp; Dourado)
           </button>
-          <button class="showcase-tab" role="tab" aria-selected="false" data-preview="comercio">
-            <span class="tab-dot dot-y"></span>
-            Exemplo 03: Gastronomia &amp; Comércio Local
+          <button class="showcase-tab" role="tab" aria-selected="false" data-preview="hamburgueria">
+            <span class="tab-dot dot-burger"></span>
+            Exemplo 03: Hamburgueria (Vermelho &amp; Amarelo)
           </button>
         </div>
 
@@ -332,160 +332,224 @@
             <div class="browser-dots">
               <span></span><span></span><span></span>
             </div>
-            <div class="browser-url" id="mockupUrl">https://auraclinica.com.br (Demonstração Fictícia)</div>
-            <span class="browser-badge">DEMONSTRAÇÃO DE LAYOUT</span>
+            <div class="browser-url" id="mockupUrl">https://petcareclinica.com.br (Demonstração Fictícia)</div>
+            <span class="browser-badge">SUA MARCA APLICADA NA PÁGINA</span>
           </div>
 
           <div class="browser-viewport" id="mockupViewport">
-            <!-- EXEMPLO 1: CLÍNICA / ESPECIALISTA (FUNDO BRANCO CLEAN) -->
-            <div class="preview-slide active" data-slide="clinica">
-              <div class="demo-page demo-clinica-light">
-                <!-- Mini Header da Clínica Fictícia -->
-                <div class="demo-navbar">
+            <!-- EXEMPLO 01: PET CARE (BRANCO + ROSA #F39BB2 + VERDE PETRÓLEO #0E4D4F) -->
+            <div class="preview-slide active" data-slide="petcare">
+              <div class="demo-page demo-petcare">
+                <!-- Mini Header Pet Care -->
+                <div class="demo-navbar pet-navbar">
                   <div class="demo-brand">
-                    <span class="demo-logo-circle clinica-accent">A</span>
+                    <div class="pet-logo-svg" aria-hidden="true">
+                      <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+                        <rect width="64" height="64" rx="14" fill="#FFFFFF" stroke="#F39BB2" stroke-width="2" />
+                        <!-- Coração Rosa abraçando -->
+                        <path
+                          d="M32 52C20 45 12 35 12 24C12 17.5 17 13 23 13C27 13 30 15 32 18C27 18 23 22 23 28C23 36 31 42 40 42C44 42 48 39 50 35C48 43 41 48 32 52Z"
+                          fill="#F39BB2" />
+                        <!-- Silhueta Cachorro Verde Petróleo -->
+                        <path
+                          d="M35 15C29 15 25 20 25 26C25 32 28 36 33 36C35 36 37 34 37 31C37 28 35 25 35 25C35 25 38 29 42 29C47 29 51 26 51 22C51 19 46 18 44 16C42 14 39 15 35 15Z"
+                          fill="#0E4D4F" />
+                        <circle cx="41" cy="20" r="1.8" fill="#FFFFFF" />
+                      </svg>
+                    </div>
                     <div>
-                      <strong>Aura Clínica Integrada</strong>
-                      <small>Odontologia &amp; Estética Facial</small>
+                      <strong class="pet-brand-title">PET CARE</strong>
+                      <small class="pet-brand-sub">Banho, Tosa &amp; Clínica Veterinária</small>
                     </div>
                   </div>
-                  <div class="demo-nav-links">
-                    <span>Tratamentos</span>
-                    <span>Estrutura</span>
-                    <span>Dúvidas</span>
-                    <span class="demo-nav-cta clinica-btn">Agendar Consulta</span>
+
+                  <div class="demo-palette-applied">
+                    <span>Cores da marca aplicadas:</span>
+                    <i style="background:#FFFFFF; border:1px solid #cbd5e1"></i>
+                    <i style="background:#F39BB2"></i>
+                    <i style="background:#0E4D4F"></i>
+                  </div>
+
+                  <div class="demo-nav-links pet-links">
+                    <span>Banho &amp; Tosa</span>
+                    <span>Consultas</span>
+                    <span>Espaço Pet</span>
+                    <span class="demo-nav-cta pet-cta-pink">Agendar Horário</span>
                   </div>
                 </div>
 
-                <!-- Corpo da Página Fictícia da Clínica -->
+                <!-- Corpo da Página Pet Care -->
                 <div class="demo-hero-grid">
-                  <div class="demo-hero-copy">
-                    <span class="demo-tag clinica-tag">EXEMPLO DE PÁGINA PARA ÁREA DA SAÚDE</span>
-                    <h3>Um sorriso saudável e natural com atendimento humanizado no centro da cidade.</h3>
+                  <div class="demo-hero-copy pet-copy">
+                    <span class="demo-tag pet-tag">CUIDADO E CARINHO PARA O SEU MELHOR AMIGO</span>
+                    <h3>Banho, tosa e acompanhamento veterinário com todo o amor que seu pet merece.</h3>
                     <p>
-                      Layout claro, limpo e acolhedor que transmite higiene, credibilidade e tranquilidade para o paciente agendar a consulta pelo WhatsApp.
+                      Ambiente climatizado, produtos hipoalergênicos, toalhas individualizadas e equipe apaixonada por animais. Agende o horário do seu pet pelo WhatsApp.
                     </p>
                     <div class="demo-actions">
-                      <span class="demo-primary-btn clinica-btn">Agendar Avaliação pelo WhatsApp</span>
-                      <span class="demo-secondary-info">Atendimento de Seg. a Sáb.</span>
+                      <span class="demo-primary-btn pet-btn-teal">Agendar Banho ou Consulta</span>
+                      <span class="demo-secondary-btn pet-btn-outline">Táxi Dog Disponível</span>
                     </div>
                   </div>
 
-                  <div class="demo-side-card clinica-card">
-                    <div class="demo-card-header">
-                      <strong>Especialidades em Destaque</strong>
-                      <span class="demo-rating">4.9 ★ (180 avaliações)</span>
-                    </div>
-                    <ul class="demo-feature-list">
-                      <li><span>✓</span> Implantes e Reabilitação Oral</li>
-                      <li><span>✓</span> Clareamento e Lentes em Resina</li>
-                      <li><span>✓</span> Estacionamento próprio no local</li>
+                  <!-- Card inspirado no Cartão de Visita Verde Petróleo + Arco Rosa/Branco da referência -->
+                  <div class="demo-side-card pet-card">
+                    <div class="pet-card-badge">PACOTES DA SEMANA</div>
+                    <h4>Clube Pet Care Mensal</h4>
+                    <p class="pet-card-desc">4 Banhos + 1 Tosa Higiênica + Hidratação da Pelagem + Check-up Veterinário.</p>
+                    <ul class="demo-feature-list pet-list">
+                      <li><span>●</span> Monitoramento por câmera no banho</li>
+                      <li><span>●</span> Atendimento para cães e gatos</li>
+                      <li><span>●</span> Vacinação e exames no local</li>
                     </ul>
-                    <div class="demo-card-footer">
-                      <small>Av. Paulista, 1000 • Sala 42</small>
-                      <strong>Resposta imediata no WhatsApp</strong>
+                    <div class="demo-card-footer pet-footer">
+                      <small>Seg. a Sáb. das 8h às 19h</small>
+                      <strong>Chamar Recepção no WhatsApp →</strong>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- EXEMPLO 2: ESCRITÓRIO / ARQUITETURA / SERVIÇOS -->
-            <div class="preview-slide" data-slide="escritorio">
-              <div class="demo-page demo-escritorio-dark">
-                <div class="demo-navbar">
+            <!-- EXEMPLO 02: IMOBILIÁRIA (AZUL MARINHO #152238 + DOURADO #DDB867 + BRANCO) -->
+            <div class="preview-slide" data-slide="imobiliaria">
+              <div class="demo-page demo-imobiliaria">
+                <!-- Mini Header Imobiliária -->
+                <div class="demo-navbar imob-navbar">
                   <div class="demo-brand">
-                    <span class="demo-logo-circle escritorio-accent">V</span>
+                    <div class="imob-logo-svg" aria-hidden="true">
+                      <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+                        <rect x="6" y="6" width="52" height="52" stroke="#DDB867" stroke-width="3" fill="#152238" />
+                        <!-- Prédios dourados -->
+                        <path d="M16 44V24L24 18V36L16 44Z" fill="#DDB867" />
+                        <path d="M26 35V18L36 12V35L31 31L26 35Z" fill="#DDB867" />
+                        <path d="M38 36V16L48 24V44L38 36Z" fill="#DDB867" />
+                        <!-- Telhado embaixo -->
+                        <path d="M14 52L32 37L50 52" stroke="#DDB867" stroke-width="3" />
+                        <!-- Janelinha 4 quadrados -->
+                        <rect x="29" y="45" width="2.5" height="2.5" fill="#DDB867" />
+                        <rect x="32.5" y="45" width="2.5" height="2.5" fill="#DDB867" />
+                        <rect x="29" y="48.5" width="2.5" height="2.5" fill="#DDB867" />
+                        <rect x="32.5" y="48.5" width="2.5" height="2.5" fill="#DDB867" />
+                      </svg>
+                    </div>
                     <div>
-                      <strong>Vértice Arquitetura</strong>
-                      <small>Projetos Residenciais &amp; Comerciais</small>
+                      <strong class="imob-brand-title">PRIME IMÓVEIS</strong>
+                      <small class="imob-brand-sub">Consultoria Imobiliária de Alto Padrão</small>
                     </div>
                   </div>
-                  <div class="demo-nav-links">
-                    <span>Portfólio</span>
-                    <span>Etapas</span>
-                    <span>Sobre o Escritório</span>
-                    <span class="demo-nav-cta escritorio-btn">Solicitar Proposta</span>
+
+                  <div class="demo-palette-applied imob-palette">
+                    <span>Cores da marca aplicadas:</span>
+                    <i style="background:#152238; border:1px solid #475569"></i>
+                    <i style="background:#DDB867"></i>
+                    <i style="background:#FFFFFF"></i>
+                  </div>
+
+                  <div class="demo-nav-links imob-links">
+                    <span>Lançamentos</span>
+                    <span>Casas em Condomínio</span>
+                    <span>Avaliação</span>
+                    <span class="demo-nav-cta imob-cta-gold">Falar com Corretor</span>
                   </div>
                 </div>
 
+                <!-- Corpo da Página Imobiliária -->
                 <div class="demo-hero-grid">
-                  <div class="demo-hero-copy">
-                    <span class="demo-tag escritorio-tag">EXEMPLO PARA PRESTADORES DE SERVIÇO &amp; ESCRITÓRIOS</span>
-                    <h3>Projetos inteligentes planejados para valorizar cada metro quadrado do seu imóvel.</h3>
+                  <div class="demo-hero-copy imob-copy">
+                    <span class="demo-tag imob-tag">EXCLUSIVIDADE &amp; SEGURANÇA PATRIMONIAL</span>
+                    <h3>Encontre o imóvel ideal para morar ou investir nas regiões mais valorizadas.</h3>
                     <p>
-                      Visual sóbrio e sofisticado para escritórios, consultorias, advogados, engenheiros e empresas B2B que precisam apresentar portfólio e captar orçamentos.
+                      Atendimento personalizado do primeiro tour presencial até a assinatura das chaves, com assessoria jurídica e financiamento completo.
                     </p>
                     <div class="demo-actions">
-                      <span class="demo-primary-btn escritorio-btn">Solicitar Orçamento de Projeto</span>
-                      <span class="demo-secondary-info">+120 Projetos Entregues</span>
+                      <span class="demo-primary-btn imob-btn-gold">Agendar Visita Privada</span>
+                      <span class="demo-secondary-btn imob-btn-white">Ver Catálogo de Imóveis</span>
                     </div>
                   </div>
 
-                  <div class="demo-side-card escritorio-card">
-                    <div class="demo-card-header">
-                      <strong>Como Funciona Nosso Processo</strong>
-                      <span>4 Etapas Claras</span>
+                  <!-- Card inspirado no cartão Azul Marinho com curva Dourada e Branca -->
+                  <div class="demo-side-card imob-card">
+                    <div class="imob-card-top">
+                      <span class="imob-pill">DESTAQUE DA SEMANA</span>
+                      <strong class="imob-code">Cód. PR-408</strong>
                     </div>
-                    <ul class="demo-feature-list">
-                      <li><span>01</span> Reunião de alinhamento e medidas</li>
-                      <li><span>02</span> Estudo preliminar em 3D realista</li>
-                      <li><span>03</span> Projeto executivo detalhado</li>
-                    </ul>
-                    <div class="demo-card-footer">
-                      <small>Atendimento Presencial e Online</small>
-                      <strong>Agende uma conversa técnica</strong>
+                    <h4>Residencial Reserva do Vale</h4>
+                    <p class="imob-specs">3 Suítes • 210 m² Privativos • 3 Vagas • Varanda Gourmet Integrada</p>
+                    <div class="imob-divider"></div>
+                    <div class="demo-card-footer imob-footer">
+                      <div>
+                        <small>Condições diretas ou financiamento</small>
+                        <strong>Receber Book em PDF no WhatsApp</strong>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- EXEMPLO 3: COMÉRCIO LOCAL / GASTRONOMIA / PRODUTO -->
-            <div class="preview-slide" data-slide="comercio">
-              <div class="demo-page demo-comercio-vibrant">
-                <div class="demo-navbar">
+            <!-- EXEMPLO 03: HAMBURGUERIA (VERMELHO #B80000 + AMARELO #F5A600 + PRETO) -->
+            <div class="preview-slide" data-slide="hamburgueria">
+              <div class="demo-page demo-hamburgueria">
+                <!-- Mini Header Hamburgueria -->
+                <div class="demo-navbar burger-navbar">
                   <div class="demo-brand">
-                    <span class="demo-logo-circle comercio-accent">B</span>
+                    <div class="burger-logo-badge">
+                      <span>NEW</span>
+                      <strong>BURGER</strong>
+                    </div>
                     <div>
-                      <strong>Brasa &amp; Malte Burger</strong>
-                      <small>Hamburgueria Artesanal na Brasa</small>
+                      <strong class="burger-brand-title">BETTER BEEF BURGER</strong>
+                      <small class="burger-brand-sub">Smash &amp; Artesanal Grelhado no Fogo</small>
                     </div>
                   </div>
-                  <div class="demo-nav-links">
-                    <span>Cardápio</span>
+
+                  <div class="demo-palette-applied burger-palette">
+                    <span>Cores da marca aplicadas:</span>
+                    <i style="background:#B80000; border:1px solid #fca5a5"></i>
+                    <i style="background:#F5A600"></i>
+                    <i style="background:#0F0F0F"></i>
+                  </div>
+
+                  <div class="demo-nav-links burger-links">
                     <span>Combos</span>
-                    <span>Localização</span>
-                    <span class="demo-nav-cta comercio-btn">Fazer Pedido</span>
+                    <span>Triplo Bacon</span>
+                    <span>Porções</span>
+                    <span class="demo-nav-cta burger-cta-yellow">PEDIR AGORA!</span>
                   </div>
                 </div>
 
+                <!-- Corpo da Página Hamburgueria inspirado nos pôsteres Vermelho/Amarelo/Preto -->
                 <div class="demo-hero-grid">
-                  <div class="demo-hero-copy">
-                    <span class="demo-tag comercio-tag">EXEMPLO PARA COMÉRCIO LOCAL, EVENTOS &amp; PRODUTOS</span>
-                    <h3>O verdadeiro burger artesanal feito na brasa, entregue quente na sua casa em 35 minutos.</h3>
+                  <div class="demo-hero-copy burger-copy">
+                    <div class="burger-stamps">
+                      <span class="stamp-yellow">PEÇA JÁ!</span>
+                      <span class="stamp-black">ENTREGA RÁPIDA</span>
+                    </div>
+                    <h3 class="burger-giant-title">O VERDADEIRO BURGER SUCULENTO NO SEU DELIVERY.</h3>
                     <p>
-                      Página vibrante e direta ao ponto para restaurantes, lojas, oficinas, estúdios e negócios locais que querem mostrar produtos, preços e receber pedidos rápidos.
+                      Pão brioche selado na manteiga, duplo blend 180g de costela bovina, queijo cheddar derretido, cebola roxa crocante e molho especial da casa.
                     </p>
                     <div class="demo-actions">
-                      <span class="demo-primary-btn comercio-btn">Pedir Agora pelo WhatsApp</span>
-                      <span class="demo-secondary-info">Terça a Domingo • 18h às 23h30</span>
+                      <span class="demo-primary-btn burger-btn-yellow">FAZER PEDIDO NO WHATSAPP</span>
+                      <span class="demo-secondary-btn burger-btn-black">VER CARDÁPIO COMPLETO</span>
                     </div>
                   </div>
 
-                  <div class="demo-side-card comercio-card">
-                    <div class="demo-card-header">
-                      <strong>Mais Pedido da Casa</strong>
-                      <span class="demo-price-tag">R$ 42,90</span>
+                  <!-- Card Poster Estilo "BEST DEAL / COMBO MEAL" -->
+                  <div class="demo-side-card burger-poster-card">
+                    <div class="burger-poster-top">
+                      <span class="burger-Small-stamp">SUPER OFERTA</span>
+                      <span class="burger-discount-badge">COMBO CASAL</span>
                     </div>
-                    <ul class="demo-feature-list">
-                      <li><span>•</span> Blend 180g grelhado no fogo</li>
-                      <li><span>•</span> Queijo cheddar inglês derretido e bacon</li>
-                      <li><span>•</span> Acompanha fritas rústicas + maionese da casa</li>
-                    </ul>
-                    <div class="demo-card-footer">
-                      <small>Retirada no Balcão ou Delivery Próprio</small>
-                      <strong>Clique para abrir o cardápio completo</strong>
+                    <h4 class="burger-poster-headline">COMBO MEAL DEAL</h4>
+                    <p class="burger-poster-sub">2 Double Cheese Beef + Batata Rústica Grande + Maionese Defumada + 2 Bebidas</p>
+                    <div class="burger-price-box">
+                      <small>DE R$ 89,90 POR APENAS</small>
+                      <strong>R$ 64,90</strong>
+                    </div>
+                    <div class="burger-order-strip">
+                      CLIQUE PARA PEDIR SEM TAXA NO APP PRÓPRIO
                     </div>
                   </div>
                 </div>
