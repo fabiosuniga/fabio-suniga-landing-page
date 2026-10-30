@@ -33,38 +33,100 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Simulador Interativo da Vitrine de Landing Pages
-  const showcaseTabs = document.querySelectorAll(".showcase-tab");
+  // 2. Simulador Interativo da Vitrine de Landing Pages (Carrossel com Setas)
   const previewSlides = document.querySelectorAll(".preview-slide");
   const mockupUrl = document.getElementById("mockupUrl");
+  const currentTitleEl = document.getElementById("showcaseCurrentTitle");
+  const currentDotEl = document.getElementById("showcaseCurrentDot");
+  const dotBtns = document.querySelectorAll(".showcase-dot-btn");
+  const prevBtns = [
+    document.getElementById("showcasePrev"),
+    document.getElementById("showcaseSidePrev"),
+  ];
+  const nextBtns = [
+    document.getElementById("showcaseNext"),
+    document.getElementById("showcaseSideNext"),
+  ];
 
-  const urlMap = {
-    petcare: "https://petcareclinica.com.br (Demonstração Fictícia)",
-    imobiliaria: "https://primeimoveis.com.br (Demonstração Fictícia)",
-    hamburgueria: "https://betterbeefburger.com.br (Demonstração Fictícia)",
-  };
+  const showcaseItems = [
+    {
+      id: "petcare",
+      title: "Pet Care (Branco, Rosa & Verde)",
+      dotClass: "dot-pet",
+      url: "https://petcareclinica.com.br (Demonstração Fictícia)",
+    },
+    {
+      id: "imobiliaria",
+      title: "Imobiliária (Azul Marinho & Dourado)",
+      dotClass: "dot-imob",
+      url: "https://primeimoveis.com.br (Demonstração Fictícia)",
+    },
+    {
+      id: "hamburgueria",
+      title: "Hamburgueria (Vermelho & Amarelo)",
+      dotClass: "dot-burger",
+      url: "https://betterbeefburger.com.br (Demonstração Fictícia)",
+    },
+  ];
 
-  showcaseTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const target = tab.getAttribute("data-preview");
+  let currentSlideIndex = 0;
 
-      showcaseTabs.forEach((t) => {
-        t.classList.remove("active");
-        t.setAttribute("aria-selected", "false");
+  function goToShowcaseSlide(newIndex, direction = "next") {
+    currentSlideIndex =
+      (newIndex + showcaseItems.length) % showcaseItems.length;
+    const item = showcaseItems[currentSlideIndex];
+
+    previewSlides.forEach((slide) => {
+      slide.classList.remove("active", "slide-next", "slide-prev");
+      if (slide.getAttribute("data-slide") === item.id) {
+        slide.classList.add(
+          "active",
+          direction === "prev" ? "slide-prev" : "slide-next"
+        );
+      }
+    });
+
+    if (currentTitleEl) {
+      currentTitleEl.textContent = item.title;
+    }
+
+    if (currentDotEl) {
+      currentDotEl.className = `tab-dot ${item.dotClass}`;
+    }
+
+    if (mockupUrl) {
+      mockupUrl.textContent = item.url;
+    }
+
+    dotBtns.forEach((btn, idx) => {
+      const isActive = idx === currentSlideIndex;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  }
+
+  prevBtns.forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", () => {
+        goToShowcaseSlide(currentSlideIndex - 1, "prev");
       });
-      tab.classList.add("active");
-      tab.setAttribute("aria-selected", "true");
+    }
+  });
 
-      previewSlides.forEach((slide) => {
-        if (slide.getAttribute("data-slide") === target) {
-          slide.classList.add("active");
-        } else {
-          slide.classList.remove("active");
-        }
+  nextBtns.forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", () => {
+        goToShowcaseSlide(currentSlideIndex + 1, "next");
       });
+    }
+  });
 
-      if (mockupUrl && urlMap[target]) {
-        mockupUrl.textContent = urlMap[target];
+  dotBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetIndex = Number(btn.getAttribute("data-index"));
+      if (!Number.isNaN(targetIndex) && targetIndex !== currentSlideIndex) {
+        const dir = targetIndex > currentSlideIndex ? "next" : "prev";
+        goToShowcaseSlide(targetIndex, dir);
       }
     });
   });

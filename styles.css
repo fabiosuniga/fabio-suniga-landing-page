@@ -848,43 +848,136 @@ a {
 }
 
 /* ==========================================
-   INTERACTIVE SHOWCASE SIMULATOR
+   INTERACTIVE SHOWCASE SIMULATOR (CAROUSEL)
    ========================================== */
-.showcase-tabs {
+.showcase-carousel-header {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
-.showcase-tab {
+.showcase-current-pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  padding: 12px 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  color: var(--text-white);
+  padding: 12px 24px;
   border-radius: 999px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  font-size: 0.92rem;
+  min-inline-size: 360px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-.showcase-tab:hover,
-.showcase-tab.active {
+.showcase-arrow,
+.showcase-side-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 46px;
+  min-block-size: 46px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-bright);
   color: var(--text-white);
-  border-color: var(--border-bright);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showcase-arrow:hover,
+.showcase-side-arrow:hover {
   background: var(--bg-elevated);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  transform: scale(1.08);
+  box-shadow: 0 0 18px var(--cyan-glow);
+}
+
+.showcase-arrow:focus-visible,
+.showcase-side-arrow:focus-visible,
+.showcase-dot-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.showcase-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.showcase-side-arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 10;
+  min-inline-size: 52px;
+  min-block-size: 52px;
+  background: rgba(12, 12, 16, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+}
+
+.showcase-side-arrow.prev {
+  left: -26px;
+}
+
+.showcase-side-arrow.next {
+  right: -26px;
+}
+
+.showcase-side-arrow:hover {
+  transform: scale(1.08);
+}
+
+.showcase-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.showcase-dot-btn {
+  min-inline-size: 28px;
+  min-block-size: 24px;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-dot-btn::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.showcase-dot-btn.active::before {
+  background: var(--magenta);
+  transform: scaleX(1.25);
 }
 
 .tab-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .dot-pet {
@@ -903,6 +996,7 @@ a {
 }
 
 .browser-mockup {
+  width: 100%;
   background: #0b0b10;
   border: 1px solid var(--border-bright);
   border-radius: var(--radius-lg);
@@ -954,6 +1048,38 @@ a {
 
 .preview-slide.active {
   display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .preview-slide.active.slide-next {
+    animation: showcaseSlideNext 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .preview-slide.active.slide-prev {
+    animation: showcaseSlidePrev 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes showcaseSlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes showcaseSlidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Realistic Miniature Demo Landing Pages inside Browser Mockup */
@@ -2153,12 +2279,19 @@ a {
   }
 
   /* Vitrine e Mockup de Navegador no Celular */
-  .showcase-tab {
-    width: 100%;
-    justify-content: flex-start;
-    border-radius: 12px;
-    font-size: 0.82rem;
-    padding: 10px 14px;
+  .showcase-carousel-header {
+    gap: 8px;
+  }
+
+  .showcase-current-pill {
+    min-inline-size: 0;
+    flex: 1;
+    font-size: 0.78rem;
+    padding: 10px 12px;
+  }
+
+  .showcase-side-arrow {
+    display: none;
   }
 
   .browser-bar {

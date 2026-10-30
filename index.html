@@ -97,7 +97,8 @@
 
           <p class="hero-subtitle">
             Não entregue a imagem da sua empresa para um template genérico. Eu uno <strong>Design Gráfico</strong>
-            e <strong>desenvolvimento web moderno</strong> para transformar a sua marca em uma página rápida, profissional e pronta para converter visitantes em clientes.
+            e <strong>desenvolvimento web moderno</strong> para transformar a sua marca em uma página rápida,
+            profissional e pronta para converter visitantes em clientes.
           </p>
 
           <div class="hero-cta-group">
@@ -227,7 +228,8 @@
             </div>
             <h3>Sua Marca Valorizada nos Primeiros 3 Segundos</h3>
             <p>
-              Você já tem seu logotipo e suas cores, mas sente que sua presença na web não passa o nível real da sua empresa? Eu construo toda a página respeitando e elevando a identidade que você já possui.
+              Você já tem seu logotipo e suas cores, mas sente que sua presença na web não passa o nível real da sua
+              empresa? Eu construo toda a página respeitando e elevando a identidade que você já possui.
             </p>
             <ul class="pillar-list">
               <li>Layout fiel ao seu logotipo e paleta de cores</li>
@@ -247,7 +249,8 @@
             </div>
             <h3>Carregamento Rápido &amp; Foco em Contato</h3>
             <p>
-              Desenvolvida com código limpo e moderno, sua página abre instantaneamente no celular de quem clica no link da sua bio do Instagram ou recebe seu link no WhatsApp.
+              Desenvolvida com código limpo e moderno, sua página abre instantaneamente no celular de quem clica no link
+              da sua bio do Instagram ou recebe seu link no WhatsApp.
             </p>
             <ul class="pillar-list">
               <li>Leitura perfeita na tela do celular</li>
@@ -268,7 +271,8 @@
             </div>
             <h3>Suporte Visual Completo para a Página</h3>
             <p>
-              Seu logotipo está em baixa resolução ou você precisa de banners, tratamento de imagens e materiais gráficos que combinem com a sua nova página? Eu resolvo tudo no mesmo projeto.
+              Seu logotipo está em baixa resolução ou você precisa de banners, tratamento de imagens e materiais
+              gráficos que combinem com a sua nova página? Eu resolvo tudo no mesmo projeto.
             </p>
             <ul class="pillar-list">
               <li>Vetorização do seu logotipo atual em alta definição</li>
@@ -285,257 +289,295 @@
       <div class="container">
         <div class="section-header">
           <span class="section-kicker kicker-magenta">EXEMPLOS DE MODELOS POR NICHO</span>
-          <h2 class="section-title">Como uma Landing Page se adapta ao <span class="text-magenta">estilo da sua empresa</span></h2>
+          <h2 class="section-title">Como uma Landing Page se adapta ao <span class="text-magenta">estilo da sua
+              empresa</span></h2>
           <p class="section-desc">
-            Abaixo estão <strong>3 demonstrações fictícias</strong> para você ver na prática como o visual, as cores e a estrutura mudam completamente de acordo com o segmento do cliente:
+            Abaixo estão <strong>3 demonstrações fictícias</strong> para você ver na prática como o visual, as cores e a
+            estrutura mudam completamente de acordo com o segmento do cliente:
           </p>
         </div>
 
-        <!-- Interactive Style Switcher -->
-        <div class="showcase-tabs" role="tablist" aria-label="Exemplos fictícios de Landing Pages por segmento">
-          <button class="showcase-tab active" role="tab" aria-selected="true" data-preview="petcare">
-            <span class="tab-dot dot-pet"></span>
-            Exemplo 01: Pet Care (Branco, Rosa &amp; Verde)
+        <!-- Interactive Carousel Controls -->
+        <div class="showcase-carousel-header">
+          <button type="button" class="showcase-arrow" id="showcasePrev" aria-label="Ver exemplo anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
           </button>
-          <button class="showcase-tab" role="tab" aria-selected="false" data-preview="imobiliaria">
-            <span class="tab-dot dot-imob"></span>
-            Exemplo 02: Imobiliária (Azul Marinho &amp; Dourado)
-          </button>
-          <button class="showcase-tab" role="tab" aria-selected="false" data-preview="hamburgueria">
-            <span class="tab-dot dot-burger"></span>
-            Exemplo 03: Hamburgueria (Vermelho &amp; Amarelo)
+
+          <div class="showcase-current-pill" aria-live="polite">
+            <span class="tab-dot dot-pet" id="showcaseCurrentDot" aria-hidden="true"></span>
+            <span id="showcaseCurrentTitle">Pet Care (Branco, Rosa &amp; Verde)</span>
+          </div>
+
+          <button type="button" class="showcase-arrow" id="showcaseNext" aria-label="Ver próximo exemplo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
           </button>
         </div>
 
-        <div class="browser-mockup">
-          <div class="browser-bar">
-            <div class="browser-dots">
-              <span></span><span></span><span></span>
+        <div class="showcase-stage">
+          <button type="button" class="showcase-side-arrow prev" id="showcaseSidePrev" aria-label="Exemplo anterior">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+
+          <div class="browser-mockup">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-url" id="mockupUrl">https://petcareclinica.com.br (Demonstração Fictícia)</div>
+              <span class="browser-badge">SUA MARCA APLICADA NA PÁGINA</span>
             </div>
-            <div class="browser-url" id="mockupUrl">https://petcareclinica.com.br (Demonstração Fictícia)</div>
-            <span class="browser-badge">SUA MARCA APLICADA NA PÁGINA</span>
-          </div>
 
-          <div class="browser-viewport" id="mockupViewport">
-            <!-- EXEMPLO 01: PET CARE (BRANCO + ROSA #F39BB2 + VERDE PETRÓLEO #0E4D4F) -->
-            <div class="preview-slide active" data-slide="petcare">
-              <div class="demo-page demo-petcare">
-                <!-- Mini Header Pet Care -->
-                <div class="demo-navbar pet-navbar">
-                  <div class="demo-brand">
-                    <div class="pet-logo-svg" aria-hidden="true">
-                      <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
-                        <rect width="64" height="64" rx="14" fill="#FFFFFF" stroke="#F39BB2" stroke-width="2" />
-                        <!-- Coração Rosa abraçando -->
-                        <path
-                          d="M32 52C20 45 12 35 12 24C12 17.5 17 13 23 13C27 13 30 15 32 18C27 18 23 22 23 28C23 36 31 42 40 42C44 42 48 39 50 35C48 43 41 48 32 52Z"
-                          fill="#F39BB2" />
-                        <!-- Silhueta Cachorro Verde Petróleo -->
-                        <path
-                          d="M35 15C29 15 25 20 25 26C25 32 28 36 33 36C35 36 37 34 37 31C37 28 35 25 35 25C35 25 38 29 42 29C47 29 51 26 51 22C51 19 46 18 44 16C42 14 39 15 35 15Z"
-                          fill="#0E4D4F" />
-                        <circle cx="41" cy="20" r="1.8" fill="#FFFFFF" />
-                      </svg>
+            <div class="browser-viewport" id="mockupViewport">
+              <!-- EXEMPLO 01: PET CARE (BRANCO + ROSA #F39BB2 + VERDE PETRÓLEO #0E4D4F) -->
+              <div class="preview-slide active" data-slide="petcare">
+                <div class="demo-page demo-petcare">
+                  <!-- Mini Header Pet Care -->
+                  <div class="demo-navbar pet-navbar">
+                    <div class="demo-brand">
+                      <div class="pet-logo-svg" aria-hidden="true">
+                        <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+                          <rect width="64" height="64" rx="14" fill="#FFFFFF" stroke="#F39BB2" stroke-width="2" />
+                          <!-- Coração Rosa abraçando -->
+                          <path
+                            d="M32 52C20 45 12 35 12 24C12 17.5 17 13 23 13C27 13 30 15 32 18C27 18 23 22 23 28C23 36 31 42 40 42C44 42 48 39 50 35C48 43 41 48 32 52Z"
+                            fill="#F39BB2" />
+                          <!-- Silhueta Cachorro Verde Petróleo -->
+                          <path
+                            d="M35 15C29 15 25 20 25 26C25 32 28 36 33 36C35 36 37 34 37 31C37 28 35 25 35 25C35 25 38 29 42 29C47 29 51 26 51 22C51 19 46 18 44 16C42 14 39 15 35 15Z"
+                            fill="#0E4D4F" />
+                          <circle cx="41" cy="20" r="1.8" fill="#FFFFFF" />
+                        </svg>
+                      </div>
+                      <div>
+                        <strong class="pet-brand-title">PET CARE</strong>
+                        <small class="pet-brand-sub">Banho, Tosa &amp; Clínica Veterinária</small>
+                      </div>
                     </div>
-                    <div>
-                      <strong class="pet-brand-title">PET CARE</strong>
-                      <small class="pet-brand-sub">Banho, Tosa &amp; Clínica Veterinária</small>
+
+                    <div class="demo-palette-applied">
+                      <span>Cores da marca aplicadas:</span>
+                      <i style="background:#FFFFFF; border:1px solid #cbd5e1"></i>
+                      <i style="background:#F39BB2"></i>
+                      <i style="background:#0E4D4F"></i>
                     </div>
-                  </div>
 
-                  <div class="demo-palette-applied">
-                    <span>Cores da marca aplicadas:</span>
-                    <i style="background:#FFFFFF; border:1px solid #cbd5e1"></i>
-                    <i style="background:#F39BB2"></i>
-                    <i style="background:#0E4D4F"></i>
-                  </div>
-
-                  <div class="demo-nav-links pet-links">
-                    <span>Banho &amp; Tosa</span>
-                    <span>Consultas</span>
-                    <span>Espaço Pet</span>
-                    <span class="demo-nav-cta pet-cta-pink">Agendar Horário</span>
-                  </div>
-                </div>
-
-                <!-- Corpo da Página Pet Care -->
-                <div class="demo-hero-grid">
-                  <div class="demo-hero-copy pet-copy">
-                    <span class="demo-tag pet-tag">CUIDADO E CARINHO PARA O SEU MELHOR AMIGO</span>
-                    <h3>Banho, tosa e acompanhamento veterinário com todo o amor que seu pet merece.</h3>
-                    <p>
-                      Ambiente climatizado, produtos hipoalergênicos, toalhas individualizadas e equipe apaixonada por animais. Agende o horário do seu pet pelo WhatsApp.
-                    </p>
-                    <div class="demo-actions">
-                      <span class="demo-primary-btn pet-btn-teal">Agendar Banho ou Consulta</span>
-                      <span class="demo-secondary-btn pet-btn-outline">Táxi Dog Disponível</span>
+                    <div class="demo-nav-links pet-links">
+                      <span>Banho &amp; Tosa</span>
+                      <span>Consultas</span>
+                      <span>Espaço Pet</span>
+                      <span class="demo-nav-cta pet-cta-pink">Agendar Horário</span>
                     </div>
                   </div>
 
-                  <!-- Card inspirado no Cartão de Visita Verde Petróleo + Arco Rosa/Branco da referência -->
-                  <div class="demo-side-card pet-card">
-                    <div class="pet-card-badge">PACOTES DA SEMANA</div>
-                    <h4>Clube Pet Care Mensal</h4>
-                    <p class="pet-card-desc">4 Banhos + 1 Tosa Higiênica + Hidratação da Pelagem + Check-up Veterinário.</p>
-                    <ul class="demo-feature-list pet-list">
-                      <li><span>●</span> Monitoramento por câmera no banho</li>
-                      <li><span>●</span> Atendimento para cães e gatos</li>
-                      <li><span>●</span> Vacinação e exames no local</li>
-                    </ul>
-                    <div class="demo-card-footer pet-footer">
-                      <small>Seg. a Sáb. das 8h às 19h</small>
-                      <strong>Chamar Recepção no WhatsApp →</strong>
+                  <!-- Corpo da Página Pet Care -->
+                  <div class="demo-hero-grid">
+                    <div class="demo-hero-copy pet-copy">
+                      <span class="demo-tag pet-tag">CUIDADO E CARINHO PARA O SEU MELHOR AMIGO</span>
+                      <h3>Banho, tosa e acompanhamento veterinário com todo o amor que seu pet merece.</h3>
+                      <p>
+                        Ambiente climatizado, produtos hipoalergênicos, toalhas individualizadas e equipe apaixonada por
+                        animais. Agende o horário do seu pet pelo WhatsApp.
+                      </p>
+                      <div class="demo-actions">
+                        <span class="demo-primary-btn pet-btn-teal">Agendar Banho ou Consulta</span>
+                        <span class="demo-secondary-btn pet-btn-outline">Táxi Dog Disponível</span>
+                      </div>
+                    </div>
+
+                    <!-- Card inspirado no Cartão de Visita Verde Petróleo + Arco Rosa/Branco da referência -->
+                    <div class="demo-side-card pet-card">
+                      <div class="pet-card-badge">PACOTES DA SEMANA</div>
+                      <h4>Clube Pet Care Mensal</h4>
+                      <p class="pet-card-desc">4 Banhos + 1 Tosa Higiênica + Hidratação da Pelagem + Check-up
+                        Veterinário.</p>
+                      <ul class="demo-feature-list pet-list">
+                        <li><span>●</span> Monitoramento por câmera no banho</li>
+                        <li><span>●</span> Atendimento para cães e gatos</li>
+                        <li><span>●</span> Vacinação e exames no local</li>
+                      </ul>
+                      <div class="demo-card-footer pet-footer">
+                        <small>Seg. a Sáb. das 8h às 19h</small>
+                        <strong>Chamar Recepção no WhatsApp →</strong>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- EXEMPLO 02: IMOBILIÁRIA (AZUL MARINHO #152238 + DOURADO #DDB867 + BRANCO) -->
-            <div class="preview-slide" data-slide="imobiliaria">
-              <div class="demo-page demo-imobiliaria">
-                <!-- Mini Header Imobiliária -->
-                <div class="demo-navbar imob-navbar">
-                  <div class="demo-brand">
-                    <div class="imob-logo-svg" aria-hidden="true">
-                      <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
-                        <rect x="6" y="6" width="52" height="52" stroke="#DDB867" stroke-width="3" fill="#152238" />
-                        <!-- Prédios dourados -->
-                        <path d="M16 44V24L24 18V36L16 44Z" fill="#DDB867" />
-                        <path d="M26 35V18L36 12V35L31 31L26 35Z" fill="#DDB867" />
-                        <path d="M38 36V16L48 24V44L38 36Z" fill="#DDB867" />
-                        <!-- Telhado embaixo -->
-                        <path d="M14 52L32 37L50 52" stroke="#DDB867" stroke-width="3" />
-                        <!-- Janelinha 4 quadrados -->
-                        <rect x="29" y="45" width="2.5" height="2.5" fill="#DDB867" />
-                        <rect x="32.5" y="45" width="2.5" height="2.5" fill="#DDB867" />
-                        <rect x="29" y="48.5" width="2.5" height="2.5" fill="#DDB867" />
-                        <rect x="32.5" y="48.5" width="2.5" height="2.5" fill="#DDB867" />
-                      </svg>
+              <!-- EXEMPLO 02: IMOBILIÁRIA (AZUL MARINHO #152238 + DOURADO #DDB867 + BRANCO) -->
+              <div class="preview-slide" data-slide="imobiliaria">
+                <div class="demo-page demo-imobiliaria">
+                  <!-- Mini Header Imobiliária -->
+                  <div class="demo-navbar imob-navbar">
+                    <div class="demo-brand">
+                      <div class="imob-logo-svg" aria-hidden="true">
+                        <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+                          <rect x="6" y="6" width="52" height="52" stroke="#DDB867" stroke-width="3" fill="#152238" />
+                          <!-- Prédios dourados -->
+                          <path d="M16 44V24L24 18V36L16 44Z" fill="#DDB867" />
+                          <path d="M26 35V18L36 12V35L31 31L26 35Z" fill="#DDB867" />
+                          <path d="M38 36V16L48 24V44L38 36Z" fill="#DDB867" />
+                          <!-- Telhado embaixo -->
+                          <path d="M14 52L32 37L50 52" stroke="#DDB867" stroke-width="3" />
+                          <!-- Janelinha 4 quadrados -->
+                          <rect x="29" y="45" width="2.5" height="2.5" fill="#DDB867" />
+                          <rect x="32.5" y="45" width="2.5" height="2.5" fill="#DDB867" />
+                          <rect x="29" y="48.5" width="2.5" height="2.5" fill="#DDB867" />
+                          <rect x="32.5" y="48.5" width="2.5" height="2.5" fill="#DDB867" />
+                        </svg>
+                      </div>
+                      <div>
+                        <strong class="imob-brand-title">PRIME IMÓVEIS</strong>
+                        <small class="imob-brand-sub">Consultoria Imobiliária de Alto Padrão</small>
+                      </div>
                     </div>
-                    <div>
-                      <strong class="imob-brand-title">PRIME IMÓVEIS</strong>
-                      <small class="imob-brand-sub">Consultoria Imobiliária de Alto Padrão</small>
+
+                    <div class="demo-palette-applied imob-palette">
+                      <span>Cores da marca aplicadas:</span>
+                      <i style="background:#152238; border:1px solid #475569"></i>
+                      <i style="background:#DDB867"></i>
+                      <i style="background:#FFFFFF"></i>
+                    </div>
+
+                    <div class="demo-nav-links imob-links">
+                      <span>Lançamentos</span>
+                      <span>Casas em Condomínio</span>
+                      <span>Avaliação</span>
+                      <span class="demo-nav-cta imob-cta-gold">Falar com Corretor</span>
                     </div>
                   </div>
 
-                  <div class="demo-palette-applied imob-palette">
-                    <span>Cores da marca aplicadas:</span>
-                    <i style="background:#152238; border:1px solid #475569"></i>
-                    <i style="background:#DDB867"></i>
-                    <i style="background:#FFFFFF"></i>
-                  </div>
+                  <!-- Corpo da Página Imobiliária -->
+                  <div class="demo-hero-grid">
+                    <div class="demo-hero-copy imob-copy">
+                      <span class="demo-tag imob-tag">EXCLUSIVIDADE &amp; SEGURANÇA PATRIMONIAL</span>
+                      <h3>Encontre o imóvel ideal para morar ou investir nas regiões mais valorizadas.</h3>
+                      <p>
+                        Atendimento personalizado do primeiro tour presencial até a assinatura das chaves, com
+                        assessoria jurídica e financiamento completo.
+                      </p>
+                      <div class="demo-actions">
+                        <span class="demo-primary-btn imob-btn-gold">Agendar Visita Privada</span>
+                        <span class="demo-secondary-btn imob-btn-white">Ver Catálogo de Imóveis</span>
+                      </div>
+                    </div>
 
-                  <div class="demo-nav-links imob-links">
-                    <span>Lançamentos</span>
-                    <span>Casas em Condomínio</span>
-                    <span>Avaliação</span>
-                    <span class="demo-nav-cta imob-cta-gold">Falar com Corretor</span>
+                    <!-- Card inspirado no cartão Azul Marinho com curva Dourada e Branca -->
+                    <div class="demo-side-card imob-card">
+                      <div class="imob-card-top">
+                        <span class="imob-pill">DESTAQUE DA SEMANA</span>
+                        <strong class="imob-code">Cód. PR-408</strong>
+                      </div>
+                      <h4>Residencial Reserva do Vale</h4>
+                      <p class="imob-specs">3 Suítes • 210 m² Privativos • 3 Vagas • Varanda Gourmet Integrada</p>
+                      <div class="imob-divider"></div>
+                      <div class="demo-card-footer imob-footer">
+                        <div>
+                          <small>Condições diretas ou financiamento</small>
+                          <strong>Receber Book em PDF no WhatsApp</strong>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                <!-- Corpo da Página Imobiliária -->
-                <div class="demo-hero-grid">
-                  <div class="demo-hero-copy imob-copy">
-                    <span class="demo-tag imob-tag">EXCLUSIVIDADE &amp; SEGURANÇA PATRIMONIAL</span>
-                    <h3>Encontre o imóvel ideal para morar ou investir nas regiões mais valorizadas.</h3>
-                    <p>
-                      Atendimento personalizado do primeiro tour presencial até a assinatura das chaves, com assessoria jurídica e financiamento completo.
-                    </p>
-                    <div class="demo-actions">
-                      <span class="demo-primary-btn imob-btn-gold">Agendar Visita Privada</span>
-                      <span class="demo-secondary-btn imob-btn-white">Ver Catálogo de Imóveis</span>
+              <!-- EXEMPLO 03: HAMBURGUERIA (VERMELHO #B80000 + AMARELO #F5A600 + PRETO) -->
+              <div class="preview-slide" data-slide="hamburgueria">
+                <div class="demo-page demo-hamburgueria">
+                  <!-- Mini Header Hamburgueria -->
+                  <div class="demo-navbar burger-navbar">
+                    <div class="demo-brand">
+                      <div class="burger-logo-badge">
+                        <span>NEW</span>
+                        <strong>BURGER</strong>
+                      </div>
+                      <div>
+                        <strong class="burger-brand-title">BETTER BEEF BURGER</strong>
+                        <small class="burger-brand-sub">Smash &amp; Artesanal Grelhado no Fogo</small>
+                      </div>
+                    </div>
+
+                    <div class="demo-palette-applied burger-palette">
+                      <span>Cores da marca aplicadas:</span>
+                      <i style="background:#B80000; border:1px solid #fca5a5"></i>
+                      <i style="background:#F5A600"></i>
+                      <i style="background:#0F0F0F"></i>
+                    </div>
+
+                    <div class="demo-nav-links burger-links">
+                      <span>Combos</span>
+                      <span>Triplo Bacon</span>
+                      <span>Porções</span>
+                      <span class="demo-nav-cta burger-cta-yellow">PEDIR AGORA!</span>
                     </div>
                   </div>
 
-                  <!-- Card inspirado no cartão Azul Marinho com curva Dourada e Branca -->
-                  <div class="demo-side-card imob-card">
-                    <div class="imob-card-top">
-                      <span class="imob-pill">DESTAQUE DA SEMANA</span>
-                      <strong class="imob-code">Cód. PR-408</strong>
+                  <!-- Corpo da Página Hamburgueria inspirado nos pôsteres Vermelho/Amarelo/Preto -->
+                  <div class="demo-hero-grid">
+                    <div class="demo-hero-copy burger-copy">
+                      <div class="burger-stamps">
+                        <span class="stamp-yellow">PEÇA JÁ!</span>
+                        <span class="stamp-black">ENTREGA RÁPIDA</span>
+                      </div>
+                      <h3 class="burger-giant-title">O VERDADEIRO BURGER SUCULENTO NO SEU DELIVERY.</h3>
+                      <p>
+                        Pão brioche selado na manteiga, duplo blend 180g de costela bovina, queijo cheddar derretido,
+                        cebola roxa crocante e molho especial da casa.
+                      </p>
+                      <div class="demo-actions">
+                        <span class="demo-primary-btn burger-btn-yellow">FAZER PEDIDO NO WHATSAPP</span>
+                        <span class="demo-secondary-btn burger-btn-black">VER CARDÁPIO COMPLETO</span>
+                      </div>
                     </div>
-                    <h4>Residencial Reserva do Vale</h4>
-                    <p class="imob-specs">3 Suítes • 210 m² Privativos • 3 Vagas • Varanda Gourmet Integrada</p>
-                    <div class="imob-divider"></div>
-                    <div class="demo-card-footer imob-footer">
-                      <div>
-                        <small>Condições diretas ou financiamento</small>
-                        <strong>Receber Book em PDF no WhatsApp</strong>
+
+                    <!-- Card Poster Estilo "BEST DEAL / COMBO MEAL" -->
+                    <div class="demo-side-card burger-poster-card">
+                      <div class="burger-poster-top">
+                        <span class="burger-Small-stamp">SUPER OFERTA</span>
+                        <span class="burger-discount-badge">COMBO CASAL</span>
+                      </div>
+                      <h4 class="burger-poster-headline">COMBO MEAL DEAL</h4>
+                      <p class="burger-poster-sub">2 Double Cheese Beef + Batata Rústica Grande + Maionese Defumada + 2
+                        Bebidas</p>
+                      <div class="burger-price-box">
+                        <small>DE R$ 89,90 POR APENAS</small>
+                        <strong>R$ 64,90</strong>
+                      </div>
+                      <div class="burger-order-strip">
+                        CLIQUE PARA PEDIR SEM TAXA NO APP PRÓPRIO
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- EXEMPLO 03: HAMBURGUERIA (VERMELHO #B80000 + AMARELO #F5A600 + PRETO) -->
-            <div class="preview-slide" data-slide="hamburgueria">
-              <div class="demo-page demo-hamburgueria">
-                <!-- Mini Header Hamburgueria -->
-                <div class="demo-navbar burger-navbar">
-                  <div class="demo-brand">
-                    <div class="burger-logo-badge">
-                      <span>NEW</span>
-                      <strong>BURGER</strong>
-                    </div>
-                    <div>
-                      <strong class="burger-brand-title">BETTER BEEF BURGER</strong>
-                      <small class="burger-brand-sub">Smash &amp; Artesanal Grelhado no Fogo</small>
-                    </div>
-                  </div>
-
-                  <div class="demo-palette-applied burger-palette">
-                    <span>Cores da marca aplicadas:</span>
-                    <i style="background:#B80000; border:1px solid #fca5a5"></i>
-                    <i style="background:#F5A600"></i>
-                    <i style="background:#0F0F0F"></i>
-                  </div>
-
-                  <div class="demo-nav-links burger-links">
-                    <span>Combos</span>
-                    <span>Triplo Bacon</span>
-                    <span>Porções</span>
-                    <span class="demo-nav-cta burger-cta-yellow">PEDIR AGORA!</span>
-                  </div>
-                </div>
-
-                <!-- Corpo da Página Hamburgueria inspirado nos pôsteres Vermelho/Amarelo/Preto -->
-                <div class="demo-hero-grid">
-                  <div class="demo-hero-copy burger-copy">
-                    <div class="burger-stamps">
-                      <span class="stamp-yellow">PEÇA JÁ!</span>
-                      <span class="stamp-black">ENTREGA RÁPIDA</span>
-                    </div>
-                    <h3 class="burger-giant-title">O VERDADEIRO BURGER SUCULENTO NO SEU DELIVERY.</h3>
-                    <p>
-                      Pão brioche selado na manteiga, duplo blend 180g de costela bovina, queijo cheddar derretido, cebola roxa crocante e molho especial da casa.
-                    </p>
-                    <div class="demo-actions">
-                      <span class="demo-primary-btn burger-btn-yellow">FAZER PEDIDO NO WHATSAPP</span>
-                      <span class="demo-secondary-btn burger-btn-black">VER CARDÁPIO COMPLETO</span>
-                    </div>
-                  </div>
-
-                  <!-- Card Poster Estilo "BEST DEAL / COMBO MEAL" -->
-                  <div class="demo-side-card burger-poster-card">
-                    <div class="burger-poster-top">
-                      <span class="burger-Small-stamp">SUPER OFERTA</span>
-                      <span class="burger-discount-badge">COMBO CASAL</span>
-                    </div>
-                    <h4 class="burger-poster-headline">COMBO MEAL DEAL</h4>
-                    <p class="burger-poster-sub">2 Double Cheese Beef + Batata Rústica Grande + Maionese Defumada + 2 Bebidas</p>
-                    <div class="burger-price-box">
-                      <small>DE R$ 89,90 POR APENAS</small>
-                      <strong>R$ 64,90</strong>
-                    </div>
-                    <div class="burger-order-strip">
-                      CLIQUE PARA PEDIR SEM TAXA NO APP PRÓPRIO
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+
+          <button type="button" class="showcase-side-arrow next" id="showcaseSideNext" aria-label="Próximo exemplo">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="showcase-dots" role="tablist" aria-label="Selecionar exemplo de Landing Page">
+          <button type="button" class="showcase-dot-btn active" role="tab" aria-selected="true" aria-label="Pet Care"
+            data-index="0"></button>
+          <button type="button" class="showcase-dot-btn" role="tab" aria-selected="false" aria-label="Imobiliária"
+            data-index="1"></button>
+          <button type="button" class="showcase-dot-btn" role="tab" aria-selected="false" aria-label="Hamburgueria"
+            data-index="2"></button>
         </div>
       </div>
     </section>
@@ -556,7 +598,8 @@
             <div class="dg-caption">
               <div class="dg-caption-text">
                 <h4>Do Digital ao Impresso</h4>
-                <p>Ciano, Magenta, Amarelo e Preto (CMYK) + Web: domínio técnico para aplicar a sua marca com perfeição em qualquer tela ou material físico.</p>
+                <p>Ciano, Magenta, Amarelo e Preto (CMYK) + Web: domínio técnico para aplicar a sua marca com perfeição
+                  em qualquer tela ou material físico.</p>
               </div>
               <div class="dg-reg-mark" aria-hidden="true">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -572,7 +615,8 @@
             <span class="section-kicker kicker-yellow">MEUS SERVIÇOS</span>
             <h2 class="section-title">Soluções em Web e Design Gráfico para o seu negócio</h2>
             <p class="section-desc">
-              Você traz a sua marca e eu cuido de transformar a apresentação visual da sua empresa — seja em uma página na internet ou em materiais gráficos prontos para produzir:
+              Você traz a sua marca e eu cuido de transformar a apresentação visual da sua empresa — seja em uma página
+              na internet ou em materiais gráficos prontos para produzir:
             </p>
 
             <div class="service-cards-stack">
@@ -580,7 +624,8 @@
                 <div class="service-badge badge-c">CARRO-CHEFE</div>
                 <div class="service-info">
                   <h3>Landing Pages &amp; Páginas de Apresentação</h3>
-                  <p>Criação de páginas exclusivas usando o logotipo e as cores da sua empresa, totalmente adaptadas para celular e com botões diretos para o seu atendimento.</p>
+                  <p>Criação de páginas exclusivas usando o logotipo e as cores da sua empresa, totalmente adaptadas
+                    para celular e com botões diretos para o seu atendimento.</p>
                 </div>
               </div>
 
@@ -588,7 +633,8 @@
                 <div class="service-badge badge-m">DIGITAL</div>
                 <div class="service-info">
                   <h3>Arte Digital &amp; Posts para Redes Sociais</h3>
-                  <p>Criação de posts, carrosséis para Instagram, capas e banners digitais seguindo a identidade visual da sua marca.</p>
+                  <p>Criação de posts, carrosséis para Instagram, capas e banners digitais seguindo a identidade visual
+                    da sua marca.</p>
                 </div>
               </div>
 
@@ -596,7 +642,8 @@
                 <div class="service-badge badge-y">VETOR</div>
                 <div class="service-info">
                   <h3>Vetorização Profissional de Logotipos e Artes</h3>
-                  <p>Seu logo está em baixa qualidade ou sem fundo transparente? Eu redesenho e vetorizo seu arquivo atual em alta definição para usar em qualquer tamanho.</p>
+                  <p>Seu logo está em baixa qualidade ou sem fundo transparente? Eu redesenho e vetorizo seu arquivo
+                    atual em alta definição para usar em qualquer tamanho.</p>
                 </div>
               </div>
 
@@ -604,7 +651,8 @@
                 <div class="service-badge badge-k">CMYK / IMPRESSO</div>
                 <div class="service-info">
                   <h3>Cartão de Visita, Adesivos, Banners e Lonas</h3>
-                  <p>Criação da arte e fechamento de arquivo no padrão CMYK correto para impressão gráfica, adesivos, faixas, banners e comunicação visual.</p>
+                  <p>Criação da arte e fechamento de arquivo no padrão CMYK correto para impressão gráfica, adesivos,
+                    faixas, banners e comunicação visual.</p>
                 </div>
               </div>
             </div>
@@ -619,14 +667,13 @@
         <div class="insta-header-flex">
           <div>
             <span class="section-kicker kicker-magenta">CONTEÚDO &amp; PORTFÓLIO NO INSTAGRAM</span>
-            <h2 class="section-title">Acompanhe meu trabalho no <span
-                class="text-gradient-cmy">Instagram</span></h2>
+            <h2 class="section-title">Acompanhe meu trabalho no <span class="text-gradient-cmy">Instagram</span></h2>
             <p class="section-desc">
               Confira abaixo o post carrossel de apresentação do meu trabalho e clique para seguir e chamar na DM:
             </p>
           </div>
-          <a href="https://www.instagram.com/fabiosunigadesign/" target="_blank" rel="noopener noreferrer" class="btn btn-insta"
-            id="instaProfileTopBtn">
+          <a href="https://www.instagram.com/fabiosunigadesign/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-insta" id="instaProfileTopBtn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -729,7 +776,8 @@
 
               <label class="builder-label">3. Mensagem gerada automaticamente:</label>
               <div class="generated-message" id="generatedMessage">
-                Olá Fábio! Tudo bem? Vi sua página e gostaria de conversar sobre um orçamento para: Landing Page Exclusiva.
+                Olá Fábio! Tudo bem? Vi sua página e gostaria de conversar sobre um orçamento para: Landing Page
+                Exclusiva.
               </div>
 
               <div class="builder-actions">
