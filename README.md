@@ -4,7 +4,7 @@
   <p><strong>Direção de Arte, Design Gráfico e Desenvolvimento Web de Alta Conversão</strong></p>
 
   <p>
-    <a href="https://fabiosuniga.github.io/fabio-suniga-landing-page/" target="_blank">
+    <a href="https://fabio-suniga-landing-page.vercel.app/" target="_blank">
       <img src="https://img.shields.io/badge/ACESSAR_LANDING_PAGE-00A8EF?style=for-the-badge&labelColor=050507&color=00A8EF" alt="Acessar Landing Page" />
     </a>
     <a href="https://www.linkedin.com/in/fabio-suniga/" target="_blank">
@@ -56,6 +56,32 @@ A interface utiliza tema escuro de alto contraste combinado com a paleta primár
 - **CSS3 Moderno:** Custom Properties (variáveis CSS), CSS Grid, Flexbox, animações fluidas, personalização nativa de barra de rolagem (`scrollbar-color` / `scrollbar-width`) e design responsivo mobile-first.
 - **JavaScript (ES6+ Vanilla):** Controle de abas do simulador de nichos, menu mobile, modal lightbox, botão flutuante reativo ao scroll e gerador dinâmico de link para WhatsApp, sem dependência de bibliotecas externas.
 
+---
+
+## Estrutura de Pastas
+
+```text
+.
+├── assets/
+│   └── FS_LOGO.svg          # Logotipo vetorial oficial (usado no layout e favicon)
+├── identidade-visual/       # Artes e slides do portfólio e apresentação da marca
+├── index.html               # Estrutura principal da Landing Page
+├── styles.css               # Estilização, componentes, simulador de nichos e responsividade
+├── script.js                # Interatividade, lightbox e gerador de orçamento para WhatsApp
+└── README.md                # Documentação do repositório
+```
+
+---
+
+## Como Executar Localmente
+
+Por ser construído com tecnologias nativas sem necessidade de build:
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/fabiosuniga/fabio-suniga-landing-page.git
+   ```
+2. Abra o arquivo `index.html` diretamente no navegador ou utilize uma extensão como o **Live Server** no VS Code.
 
 ---
 

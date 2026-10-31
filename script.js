@@ -211,5 +211,55 @@ document.addEventListener("DOMContentLoaded", () => {
   if (clientNameInput) {
     clientNameInput.addEventListener("input", updateMessage);
   }
+
+  // 6. Stagger para elementos irmãos
+  if (!CSS.supports("animation-delay: calc(sibling-index() * 0.1s)")) {
+    document
+      .querySelectorAll(
+        ".hero-grid, .pillars-grid, .service-cards-stack, .insta-carousel-grid"
+      )
+      .forEach((group) => {
+        [...group.children].forEach((el, index) => {
+          el.style.setProperty("--sibling-index", index);
+        });
+      });
+  }
+
+  // 7. Scroll Reveal ao descer a página
+  const revealTargets = document.querySelectorAll(
+    [
+      ".section-header",
+      ".pillar-card",
+      ".showcase-carousel-header",
+      ".showcase-stage",
+      ".showcase-dots",
+      ".design-grafico-poster",
+      ".services-menu > .section-kicker",
+      ".services-menu > .section-title",
+      ".services-menu > .section-desc",
+      ".service-row",
+      ".insta-header-flex",
+      ".insta-post-card",
+      ".contact-box",
+    ].join(", ")
+  );
+
+  revealTargets.forEach((el) => el.classList.add("scroll-reveal-item"));
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+        }
+      }
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -80px 0px",
+    }
+  );
+
+  revealTargets.forEach((el) => revealObserver.observe(el));
 });
 

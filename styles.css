@@ -2375,3 +2375,54 @@ a {
   }
 }
 
+/* ==========================================
+   SCROLL REVEAL & ENTRANCE ANIMATIONS
+   ========================================== */
+@keyframes heroRevealUp {
+  from {
+    opacity: 0;
+    translate: 0 44px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-grid > * {
+    --stagger-time: 0.22s;
+    animation: heroRevealUp 1s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(var(--sibling-index, 0) * var(--stagger-time));
+    animation-delay: calc((sibling-index() - 1) * var(--stagger-time));
+  }
+
+  /* Estado inicial antes de entrar na tela */
+  .scroll-reveal-item {
+    opacity: 0;
+    translate: 0 60px;
+    scale: 0.95;
+    transition:
+      opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+      translate 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+      scale 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(var(--sibling-index, 0) * 0.18s);
+    transition-delay: calc((sibling-index() - 1) * 0.18s);
+    will-change: opacity, translate, scale;
+  }
+
+  /* Estado revelado quando a seção entra no campo de visão */
+  .scroll-reveal-item.is-revealed {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid > * {
+    animation: none;
+  }
+}
+
+
