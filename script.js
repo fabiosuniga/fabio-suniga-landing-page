@@ -288,5 +288,41 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealTargets.forEach((el) => revealObserver.observe(el));
+
+  // 8. Rastreamento de Eventos de Conversão no Google Analytics (GA4)
+  function trackEvent(eventName, params = {}) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, params);
+    }
+  }
+
+  if (sendWhatsappBtn) {
+    sendWhatsappBtn.addEventListener("click", () => {
+      trackEvent("click_whatsapp_orcamento", {
+        service_selected: selectedService,
+      });
+    });
+  }
+
+  if (whatsappFloat) {
+    whatsappFloat.addEventListener("click", () => {
+      trackEvent("click_whatsapp_flutuante", {
+        service_selected: selectedService,
+      });
+    });
+  }
+
+  if (instaTopBtn) {
+    instaTopBtn.addEventListener("click", () => {
+      trackEvent("click_instagram");
+    });
+  }
+
+  const linkedinBtn = document.querySelector(".footer-linkedin");
+  if (linkedinBtn) {
+    linkedinBtn.addEventListener("click", () => {
+      trackEvent("click_linkedin");
+    });
+  }
 });
 
