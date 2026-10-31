@@ -4,7 +4,7 @@
   <p><strong>Direção de Arte, Design Gráfico e Desenvolvimento Web de Alta Conversão</strong></p>
 
   <p>
-    <a href="https://fabio-suniga-landing-page.vercel.app/" target="_blank">
+    <a href="https://fabiosuniga.vercel.app/" target="_blank">
       <img src="https://img.shields.io/badge/ACESSAR_LANDING_PAGE-00A8EF?style=for-the-badge&labelColor=050507&color=00A8EF" alt="Acessar Landing Page" />
     </a>
     <a href="https://www.linkedin.com/in/fabio-suniga/" target="_blank">
