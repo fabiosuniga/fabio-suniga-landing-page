@@ -9,6 +9,33 @@ document.addEventListener("DOMContentLoaded", () => {
     instaTopBtn.href = INSTAGRAM_URL;
   }
 
+  // Navegação suave sem sujar a URL com #topicos e corrigindo clique no Logo para voltar ao topo
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const targetId = anchor.getAttribute("href");
+      if (!targetId) return;
+
+      e.preventDefault();
+
+      if (targetId === "#topo" || targetId === "#") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      if (window.location.hash) {
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search
+        );
+      }
+    });
+  });
+
   // 1. Menu Mobile
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const mobileNav = document.getElementById("mobileNav");
