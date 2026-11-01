@@ -58,33 +58,6 @@ A interface utiliza tema escuro de alto contraste combinado com a paleta primár
 
 ---
 
-## Estrutura de Pastas
-
-```text
-.
-├── assets/
-│   └── FS_LOGO.svg          # Logotipo vetorial oficial (usado no layout e favicon)
-├── identidade-visual/       # Artes e slides do portfólio e apresentação da marca
-├── index.html               # Estrutura principal da Landing Page
-├── styles.css               # Estilização, componentes, simulador de nichos e responsividade
-├── script.js                # Interatividade, lightbox e gerador de orçamento para WhatsApp
-└── README.md                # Documentação do repositório
-```
-
----
-
-## Como Executar Localmente
-
-Por ser construído com tecnologias nativas sem necessidade de build:
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/fabiosuniga/fabio-suniga-landing-page.git
-   ```
-2. Abra o arquivo `index.html` diretamente no navegador ou utilize uma extensão como o **Live Server** no VS Code.
-
----
-
 ## Contato
 
 - **LinkedIn:** [linkedin.com/in/fabio-suniga](https://www.linkedin.com/in/fabio-suniga/)
