@@ -9,7 +9,33 @@ document.addEventListener("DOMContentLoaded", () => {
     instaTopBtn.href = INSTAGRAM_URL;
   }
 
-  // Navegação suave sem sujar a URL com #topicos e corrigindo clique no Logo para voltar ao topo
+  // Loop suave com Fade In / Fade Out nos vídeos de fundo (Topo e Rodapé)
+  document.querySelectorAll(".hero-video").forEach((video) => {
+    const FADE_DURATION = 1.0; // segundos antes do fim para iniciar o fade out
+
+    const showVideo = () => video.classList.add("is-playing");
+    if (video.readyState >= 2) {
+      showVideo();
+    } else {
+      video.addEventListener("canplay", showVideo, { once: true });
+    }
+
+    video.addEventListener("timeupdate", () => {
+      if (!video.duration) return;
+      const timeLeft = video.duration - video.currentTime;
+      if (timeLeft <= FADE_DURATION) {
+        video.classList.remove("is-playing");
+      } else if (video.currentTime >= 0.15 && !video.classList.contains("is-playing")) {
+        video.classList.add("is-playing");
+      }
+    });
+
+    video.addEventListener("seeked", () => {
+      video.classList.add("is-playing");
+    });
+  });
+
+  // Navegação suave sem sujar a URL com #topicos e voltando ao topo no logo
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const targetId = anchor.getAttribute("href");
@@ -60,144 +86,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Simulador Interativo da Vitrine de Landing Pages (Carrossel com Setas)
-  const previewSlides = document.querySelectorAll(".preview-slide");
-  const mockupUrl = document.getElementById("mockupUrl");
-  const currentTitleEl = document.getElementById("showcaseCurrentTitle");
-  const currentDotEl = document.getElementById("showcaseCurrentDot");
-  const dotBtns = document.querySelectorAll(".showcase-dot-btn");
-  const prevBtns = [
-    document.getElementById("showcasePrev"),
-    document.getElementById("showcaseSidePrev"),
-  ];
-  const nextBtns = [
-    document.getElementById("showcaseNext"),
-    document.getElementById("showcaseSideNext"),
-  ];
-
-  const showcaseItems = [
-    {
-      id: "petcare",
-      title: "Pet Care (Branco, Rosa & Verde)",
-      dotClass: "dot-pet",
-      url: "https://petcareclinica.com.br (Demonstração Fictícia)",
-    },
-    {
-      id: "imobiliaria",
-      title: "Imobiliária (Azul Marinho & Dourado)",
-      dotClass: "dot-imob",
-      url: "https://primeimoveis.com.br (Demonstração Fictícia)",
-    },
-    {
-      id: "hamburgueria",
-      title: "Hamburgueria (Vermelho & Amarelo)",
-      dotClass: "dot-burger",
-      url: "https://betterbeefburger.com.br (Demonstração Fictícia)",
-    },
-  ];
-
-  let currentSlideIndex = 0;
-
-  function goToShowcaseSlide(newIndex, direction = "next") {
-    currentSlideIndex =
-      (newIndex + showcaseItems.length) % showcaseItems.length;
-    const item = showcaseItems[currentSlideIndex];
-
-    previewSlides.forEach((slide) => {
-      slide.classList.remove("active", "slide-next", "slide-prev");
-      if (slide.getAttribute("data-slide") === item.id) {
-        slide.classList.add(
-          "active",
-          direction === "prev" ? "slide-prev" : "slide-next"
-        );
-      }
-    });
-
-    if (currentTitleEl) {
-      currentTitleEl.textContent = item.title;
-    }
-
-    if (currentDotEl) {
-      currentDotEl.className = `tab-dot ${item.dotClass}`;
-    }
-
-    if (mockupUrl) {
-      mockupUrl.textContent = item.url;
-    }
-
-    dotBtns.forEach((btn, idx) => {
-      const isActive = idx === currentSlideIndex;
-      btn.classList.toggle("active", isActive);
-      btn.setAttribute("aria-selected", isActive ? "true" : "false");
-    });
-  }
-
-  prevBtns.forEach((btn) => {
-    if (btn) {
-      btn.addEventListener("click", () => {
-        goToShowcaseSlide(currentSlideIndex - 1, "prev");
-      });
-    }
-  });
-
-  nextBtns.forEach((btn) => {
-    if (btn) {
-      btn.addEventListener("click", () => {
-        goToShowcaseSlide(currentSlideIndex + 1, "next");
-      });
-    }
-  });
-
-  dotBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const targetIndex = Number(btn.getAttribute("data-index"));
-      if (!Number.isNaN(targetIndex) && targetIndex !== currentSlideIndex) {
-        const dir = targetIndex > currentSlideIndex ? "next" : "prev";
-        goToShowcaseSlide(targetIndex, dir);
-      }
-    });
-  });
-
-  // 3. Lightbox para os slides do Carrossel do Instagram
-  const lightboxDialog = document.getElementById("lightboxDialog");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxClose = document.getElementById("lightboxClose");
-  const instaCards = document.querySelectorAll(".insta-post-card");
-
-  instaCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const imgSrc = card.getAttribute("data-lightbox");
-      if (lightboxDialog && lightboxImg && imgSrc) {
-        lightboxImg.src = imgSrc;
-        lightboxDialog.showModal();
-      }
-    });
-  });
-
-  if (lightboxClose && lightboxDialog) {
-    lightboxClose.addEventListener("click", () => lightboxDialog.close());
-    lightboxDialog.addEventListener("click", (e) => {
-      if (e.target === lightboxDialog) {
-        lightboxDialog.close();
-      }
-    });
-  }
-
-  // 4. Configurador de Orçamento Rápido + Link de WhatsApp
+  // 2. Configurador de Orçamento Rápido + Link de WhatsApp
   const serviceChips = document.querySelectorAll(".selector-chip");
   const clientNameInput = document.getElementById("clientName");
   const generatedMessageEl = document.getElementById("generatedMessage");
   const sendWhatsappBtn = document.getElementById("sendWhatsappBtn");
   const whatsappFloat = document.getElementById("whatsappFloat");
 
-  let selectedService = "Landing Page Exclusiva";
+  let selectedService = "Site Profissional para Minha Empresa";
 
   function updateMessage() {
     const nameVal = clientNameInput ? clientNameInput.value.trim() : "";
     const intro = nameVal
       ? `Olá Fábio! Aqui é ${nameVal}.`
       : `Olá Fábio! Tudo bem?`;
-    const msg = `${intro} Vi sua Landing Page e gostaria de conversar sobre um orçamento para: ${selectedService}.`;
+    const msg = `${intro} Vi o seu site e gostaria de solicitar um orçamento para: ${selectedService}.`;
     if (generatedMessageEl) {
       generatedMessageEl.textContent = msg;
     }
@@ -213,18 +116,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMessage();
 
-  // 5. Mostrar botão flutuante do WhatsApp ao rolar a página
-  function handleScrollWhatsapp() {
-    if (!whatsappFloat) return;
-    if (window.scrollY > 260) {
-      whatsappFloat.classList.add("visible");
-    } else {
-      whatsappFloat.classList.remove("visible");
+  // 3. Mostrar botão flutuante do WhatsApp, transformar Header em Pill e destacar Seção Ativa
+  const siteHeader = document.getElementById("topo");
+  const navLinks = document.querySelectorAll(".main-nav .nav-link, .mobile-nav .mobile-nav-link");
+  const trackedSections = ["diferenciais", "vitrine", "processo", "duvidas", "contato"]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  function updateHeaderAndActiveSection() {
+    const scrollY = window.scrollY;
+
+    // Botão flutuante do WhatsApp
+    if (whatsappFloat) {
+      if (scrollY > 260) {
+        whatsappFloat.classList.add("visible");
+      } else {
+        whatsappFloat.classList.remove("visible");
+      }
     }
+
+    // Transforma o Header em Pill flutuante ao sair do topo
+    if (siteHeader) {
+      if (scrollY > 70) {
+        siteHeader.classList.add("is-pill");
+      } else {
+        siteHeader.classList.remove("is-pill");
+      }
+    }
+
+    // Marca no menu qual seção o usuário está visualizando
+    const triggerLine = scrollY + window.innerHeight * 0.32;
+    let activeId = "";
+
+    for (const section of trackedSections) {
+      if (section.offsetTop <= triggerLine) {
+        activeId = section.id;
+      }
+    }
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const isMatch = activeId && href === `#${activeId}`;
+      link.classList.toggle("active", Boolean(isMatch));
+      if (isMatch) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
   }
 
-  window.addEventListener("scroll", handleScrollWhatsapp, { passive: true });
-  handleScrollWhatsapp();
+  window.addEventListener("scroll", updateHeaderAndActiveSection, { passive: true });
+  updateHeaderAndActiveSection();
 
   serviceChips.forEach((chip) => {
     chip.addEventListener("click", () => {
@@ -239,11 +182,11 @@ document.addEventListener("DOMContentLoaded", () => {
     clientNameInput.addEventListener("input", updateMessage);
   }
 
-  // 6. Stagger para elementos irmãos
+  // 5. Stagger para elementos irmãos
   if (!CSS.supports("animation-delay: calc(sibling-index() * 0.1s)")) {
     document
       .querySelectorAll(
-        ".hero-grid, .pillars-grid, .service-cards-stack, .insta-carousel-grid"
+        ".hero-grid, .pillars-grid, .process-grid, .service-cards-stack, .faq-accordion"
       )
       .forEach((group) => {
         [...group.children].forEach((el, index) => {
@@ -252,21 +195,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // 7. Scroll Reveal ao descer a página
+  // 5. Scroll Reveal ao descer a página
   const revealTargets = document.querySelectorAll(
     [
       ".section-header",
       ".pillar-card",
-      ".showcase-carousel-header",
       ".showcase-stage",
-      ".showcase-dots",
-      ".design-grafico-poster",
-      ".services-menu > .section-kicker",
-      ".services-menu > .section-title",
-      ".services-menu > .section-desc",
-      ".service-row",
-      ".insta-header-flex",
-      ".insta-post-card",
+      ".case-testimonial-card",
+      ".process-step",
+      ".faq-item",
       ".contact-box",
     ].join(", ")
   );
@@ -289,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealTargets.forEach((el) => revealObserver.observe(el));
 
-  // 8. Rastreamento de Eventos de Conversão no Google Analytics (GA4)
+  // 7. Rastreamento de Eventos de Conversão no Google Analytics (GA4)
   function trackEvent(eventName, params = {}) {
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, params);
@@ -325,4 +262,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
