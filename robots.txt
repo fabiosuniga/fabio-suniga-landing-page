@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fabiosuniga.vercel.app/sitemap.xml
+Sitemap: https://www.fabiosuniga.com.br/sitemap.xml
