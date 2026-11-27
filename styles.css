@@ -102,40 +102,38 @@ a {
 }
 
 /* ==========================================
-   AMBIENT CMYK FLUID GLOWS
+   AMBIENT STUDIO FLUID GLOWS (GPU COMPOSITED)
    ========================================== */
 .ambient-glow {
   position: fixed;
   border-radius: 50%;
-  filter: blur(130px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.28;
+  will-change: transform;
 }
 
 .glow-cyan {
-  width: 420px;
-  height: 420px;
-  background: var(--cyan);
-  top: -100px;
-  left: -140px;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgba(0, 168, 239, 0.22) 0%, rgba(0, 168, 239, 0) 70%);
+  top: -220px;
+  left: -260px;
 }
 
 .glow-magenta {
-  width: 460px;
-  height: 460px;
-  background: var(--magenta);
-  top: 28%;
-  right: -180px;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(236, 0, 140, 0.22) 0%, rgba(236, 0, 140, 0) 70%);
+  top: 22%;
+  right: -280px;
 }
 
 .glow-yellow {
-  width: 360px;
-  height: 360px;
-  background: var(--yellow);
-  bottom: 10%;
-  left: -140px;
-  opacity: 0.16;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 242, 0, 0.14) 0%, rgba(255, 242, 0, 0) 70%);
+  bottom: 4%;
+  left: -240px;
 }
 
 /* ==========================================
@@ -564,8 +562,8 @@ a {
   object-fit: cover;
   object-position: center;
   opacity: 0;
-  filter: saturate(1.15);
   transition: opacity 0.9s ease-in-out;
+  will-change: opacity;
 }
 
 .hero-video.is-playing {

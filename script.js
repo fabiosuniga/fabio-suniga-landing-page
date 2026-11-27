@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     instaTopBtn.href = INSTAGRAM_URL;
   }
 
-  // Loop suave com Fade In / Fade Out nos vídeos de fundo (Topo e Rodapé)
-  document.querySelectorAll(".hero-video").forEach((video) => {
-    const FADE_DURATION = 1.0; // segundos antes do fim para iniciar o fade out
+  // Loop suave com Fade In / Fade Out nos vídeos + Pausa inteligente quando fora da tela (zero travamento)
+  const bgVideos = document.querySelectorAll(".hero-video");
+  bgVideos.forEach((video) => {
+    const FADE_DURATION = 1.0;
 
     const showVideo = () => video.classList.add("is-playing");
     if (video.readyState >= 2) {
@@ -34,6 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
       video.classList.add("is-playing");
     });
   });
+
+  // Toca apenas o vídeo que está visível na tela (nunca decodifica 2 vídeos ao mesmo tempo)
+  if ("IntersectionObserver" in window && bgVideos.length > 0) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const vid = entry.target;
+          if (entry.isIntersecting) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        }
+      },
+      { rootMargin: "150px 0px" }
+    );
+
+    bgVideos.forEach((vid) => videoObserver.observe(vid));
+  }
 
   // Navegação suave sem sujar a URL com #topicos e voltando ao topo no logo
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -116,32 +136,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMessage();
 
-  // 3. Mostrar botão flutuante do WhatsApp, transformar Header em Pill e destacar Seção Ativa
+  // 3. Mostrar botão flutuante do WhatsApp, transformar Header em Pill e destacar Seção Ativa (otimizado com requestAnimationFrame)
   const siteHeader = document.getElementById("topo");
   const navLinks = document.querySelectorAll(".main-nav .nav-link, .mobile-nav .mobile-nav-link");
   const trackedSections = ["diferenciais", "vitrine", "processo", "duvidas", "contato"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
+  let isScrollTicking = false;
+  let lastPillState = null;
+  let lastWhatsappState = null;
+  let lastActiveId = null;
+
   function updateHeaderAndActiveSection() {
+    isScrollTicking = false;
     const scrollY = window.scrollY;
 
-    // Botão flutuante do WhatsApp
-    if (whatsappFloat) {
-      if (scrollY > 260) {
-        whatsappFloat.classList.add("visible");
-      } else {
-        whatsappFloat.classList.remove("visible");
-      }
+    // Botão flutuante do WhatsApp (só toca no DOM se mudou)
+    const shouldShowWa = scrollY > 260;
+    if (whatsappFloat && shouldShowWa !== lastWhatsappState) {
+      lastWhatsappState = shouldShowWa;
+      whatsappFloat.classList.toggle("visible", shouldShowWa);
     }
 
-    // Transforma o Header em Pill flutuante ao sair do topo
-    if (siteHeader) {
-      if (scrollY > 70) {
-        siteHeader.classList.add("is-pill");
-      } else {
-        siteHeader.classList.remove("is-pill");
-      }
+    // Transforma o Header em Pill flutuante ao sair do topo (só toca no DOM se mudou)
+    const shouldBePill = scrollY > 70;
+    if (siteHeader && shouldBePill !== lastPillState) {
+      lastPillState = shouldBePill;
+      siteHeader.classList.toggle("is-pill", shouldBePill);
     }
 
     // Marca no menu qual seção o usuário está visualizando
@@ -154,19 +176,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    navLinks.forEach((link) => {
-      const href = link.getAttribute("href");
-      const isMatch = activeId && href === `#${activeId}`;
-      link.classList.toggle("active", Boolean(isMatch));
-      if (isMatch) {
-        link.setAttribute("aria-current", "true");
-      } else {
-        link.removeAttribute("aria-current");
-      }
-    });
+    if (activeId !== lastActiveId) {
+      lastActiveId = activeId;
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        const isMatch = activeId && href === `#${activeId}`;
+        link.classList.toggle("active", Boolean(isMatch));
+        if (isMatch) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
   }
 
-  window.addEventListener("scroll", updateHeaderAndActiveSection, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!isScrollTicking) {
+        isScrollTicking = true;
+        window.requestAnimationFrame(updateHeaderAndActiveSection);
+      }
+    },
+    { passive: true }
+  );
   updateHeaderAndActiveSection();
 
   serviceChips.forEach((chip) => {
